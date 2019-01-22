@@ -1,0 +1,13 @@
+.d-inline {
+  display: inline;
+}
+
+.search {
+  display: inline-flex;
+  margin-bottom: 30px;
+
+}
+
+.btn-add {
+  margin-top: 20px;
+}

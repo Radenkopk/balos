@@ -1,0 +1,72 @@
+.social {
+  display: flex;
+}
+.social li {
+  list-style: none;
+}
+.social li a {
+  width: 50px;
+  height: 50px;
+  background-color: #b4aaaa;
+  text-align: center;
+  font-size: 18px;
+  margin:0 10px;
+  display: block;
+  padding-top: 16px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.fab {
+  position: relative;
+  color: white;
+  transition: .5s;
+  z-index: 3;
+}
+.social li a:hover .fab {
+  color: white;
+  transform: rotateY(360deg);
+}
+
+.social li a:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  transition: .5s;
+  z-index: 2;
+}
+
+.social li a:hover:before {
+  top: 0;
+}
+
+.social li:nth-child(1) a:before {
+  /* facebook */
+  background-color: #3b5999;
+}
+
+.social li:nth-child(2) a:before {
+  background-color: #dd4b39;
+  /* google */
+}
+
+.social li:nth-child(3) a:before {
+  background-color: #cd201f;
+  /* youtube */
+}
+
+.social li:nth-child(4) a:before {
+  background-color: #bd081c;
+  /* pin */
+}
+
+.social li:nth-child(5) a:before {
+  background-color: #e4405f;
+  /* insta */
+}

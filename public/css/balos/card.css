@@ -1,0 +1,22 @@
+.card img {
+  height: 183px;
+  width: 100%;
+}
+
+.card-text {
+  height: 120px;
+}
+
+.btn-card {
+  background-color: #ffaa00;
+  color: white;
+  width: 70%;
+  border-radius: 35px;
+  font-weight: bold;
+}
+
+.btn-card:hover {
+  background-color: #F26B09;
+  color: white;
+  font-weight: bold;
+}

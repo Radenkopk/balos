@@ -1,0 +1,21 @@
+
+.nav-color {
+  background: linear-gradient(to bottom, #fa0, #ffd163);
+}
+
+.nav-link, .dropdown-item {
+  color: white;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.dropdown-menu {
+  background: linear-gradient(to bottom, #ffd163 , #fa0);
+}
+
+.dropdown-item:hover {
+  background: none;
+}

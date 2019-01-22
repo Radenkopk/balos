@@ -1,0 +1,402 @@
+.background {
+  background-color: #ffffc6;
+}
+
+
+.carousel-inner img {
+    width: 100%;
+    height: 50%;
+}
+
+
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: grey;
+  margin: 0;
+}
+
+.lista li {
+  list-style: none;
+  margin: 2px 0;
+  height: 40px;
+  padding-left: 30px;
+  line-height: 40px;
+  color: white;
+  position: relative;
+  z-index: 99;
+}
+
+.lista li:hover {
+  background: linear-gradient(to bottom, #ffd163 , #fa0);
+}
+
+
+.proba {
+  background: #ffaa00;
+  width: 285px;
+  border-radius: 0 20px 20px 0
+}
+
+
+.pic-with img {
+  height: 100%;
+  width: 100%;
+}
+
+.phone {
+  height: 100px;
+  width: 100px;
+  background-color: #5f95b3;
+  border-radius:  15px 0 0 15px;
+  position: fixed;
+  right: 0px;
+  top: 50%;
+  text-align: center;
+  padding: 23px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.phone:hover {
+  opacity: 0.7;
+}
+
+.phone i {
+  font-size: 50px;
+  color: white;
+}
+
+.telephone span {
+  position: relative;
+  font-size: 25px;
+}
+
+.fa-times {
+  cursor: pointer;
+}
+
+.fa-viber {
+  color: red;
+}
+
+.map {
+  height: 500px;
+  width: 100%;
+  border: 5px solid black
+}
+.fa-thumbtack {
+  position: absolute;
+  top: 15px;
+  left: 9px;
+}
+
+.video {
+  border: 1px solid grey;
+  box-shadow: 5px 5px 5px grey;
+  margin-bottom: 30px;
+}
+
+.travel-program {
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.payment ul  {
+    list-style-image: url("p.png");
+
+}
+.payment li {
+  font-size: 21px;
+
+}
+
+.position-li {
+  position: relative;
+  bottom: 26px;
+}
+
+.price, .payment {
+  padding: 15px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.price li {
+  list-style-type: circle;
+}
+
+.form-kontakt {
+  background-color: white;
+  padding: 35px;
+  margin-bottom: 20px;
+  border-radius: 35px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.form-kontakt .input-k {
+  border-radius: 0;
+  border: none;
+  border-bottom: 3px solid black;
+  font-size: 25px;
+  background-color: white;
+}
+
+.form-kontakt textarea {
+  border-radius: 0;
+  border: none;
+  border-bottom: 3px solid black;
+  font-size: 25px;
+  background-color: white;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.form-kontakt .input-k:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: black;
+  background-color: white;
+}
+
+.form-kontakt textarea:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: black;
+  background-color: white;
+}
+
+ .map-kontakt {
+  height: 600px;
+  width: 100%;
+ }
+
+ .btn-kontakt {
+   background-color: #ffaa00;
+   color: white;
+   border: none;
+   width: 150px;
+   height: 50px;
+   border-radius: 20px;
+ }
+
+ .btn-kontakt:hover {
+   background-color: #F26B09;
+ }
+
+ .tel-adress {
+   width: 100%;
+   background-color: white;
+   padding: 30px;
+   border-radius: 20px;
+   box-shadow: 5px 5px 5px grey;
+   font-size: 20px;
+ }
+
+ .tel-adress a {
+   text-decoration: none;
+ }
+
+
+ .blog-content, .parga-content {
+   padding: 25px;
+   border-radius: 20px;
+   box-shadow: 5px 5px 5px grey;
+ }
+
+ .blog-content img {
+   width: 100%;
+ }
+
+ .btn-blog {
+   background-color: #ffaa00;
+   color: white;
+   border: none;
+   width: 170px;
+   height: 60px;
+   border-radius: 20px;
+   padding: 17px;
+ }
+
+ .btn-blog:hover, #btn-top:hover {
+   background-color: #F26B09;
+   color: white;
+ }
+
+ #btn-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  background-color: #ffaa00;
+  color: white;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.parga-content img {
+  width: 100%;
+}
+
+.parga-content a img {
+  width: 100%;
+  height: 150px;
+}
+
+.parga-content a img:hover, .pic-with img:hover {
+  transform: scale(1.1, 1.1);
+  transition-duration: 0.5s;
+}
+
+footer ul {
+  list-style-type: square;
+}
+
+footer li {
+  padding-bottom: 5px;
+  color: red;
+}
+
+footer li a {
+  color: grey;
+}
+
+footer li a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.footer a:hover {
+  text-decoration: none;
+}
+
+.height-img{
+  height: 250px;
+}
+
+.b-with {
+  width: 170px;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu a::after {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 6px;
+  top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #16181b;
+    text-decoration: none;
+    background: none;
+}
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+.fa-angle-right {
+  position: absolute;
+      right: 8px;
+      top: 9px;
+}
+
+.last-minute ul {
+  color: red;
+}
+
+
+
+ /* xs, sm */
+ @media (max-width: 768px) {
+   .pic-with {
+     height: 200px;
+     width: 100%;
+   }
+
+   .modal-class {
+   width: 100%;
+   }
+
+ }
+
+/* md */
+@media (min-width: 768px) {
+  .pic-with {
+    height: 300px;
+    width: 100%;
+  }
+
+  .modal-class {
+  width: 500px;
+  }
+}
+
+
+
+/* lg */
+@media (min-width: 992px) {
+  .pic-with {
+    height: 150px;
+    width: 200px;
+  }
+}
+
+
+
+
+/* Feel free to change duration  */
+.animated  {
+  -webkit-animation-duration : 1000 ms  ;
+  animation-duration : 1000 ms  ;
+  -webkit-animation-fill-mode : both  ;
+  animation-fill-mode : both  ;
+}
+/* .owl-animated-out - only for current item */
+/* This is very important class. Use z-index if you want move Out item above In item */
+.owl-animated-out {
+  z-index : 1
+   }
+/* .owl-animated-in - only for upcoming item
+/* This is very important class. Use z-index if you want move In item above Out item */
+.owl-animated-in {
+  z-index : 0
+   }
+/* .fadeOut is style taken from Animation.css and this is how it looks in owl.carousel.css:  */
+.fadeOut  {
+  -webkit-animation-name : fadeOut  ;
+  animation-name : fadeOut  ;
+}
+@-webkit-keyframes  fadeOut  {
+  0% {
+    opacity : 1   ;
+  }
+  100% {
+    opacity : 0   ;
+  }
+}
+@keyframes  fadeOut  {
+  0% {
+    opacity : 1   ;
+  }
+  100% {
+    opacity : 0   ;
+  }
+}

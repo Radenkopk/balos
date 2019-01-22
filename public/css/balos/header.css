@@ -1,0 +1,33 @@
+header {
+  background-color: #353638;
+}
+
+header h4 {
+  color: #ccc;
+  font-size: 16px;
+  text-align: center;
+}
+
+header h4 a, header h4 a:hover {
+  color:  #F26B09;
+  text-decoration: none;
+}
+
+.adress {
+  color: #ccc;
+  font-size: 15px;
+  text-align: center;
+}
+
+.input-search{
+  border-radius: 25px;
+  display: inline;
+  width: 75%;
+}
+
+.fa-search {
+  color: grey;
+  position: relative;
+  right: 34px;
+  cursor: pointer;
+}
