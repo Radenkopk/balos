@@ -29,7 +29,7 @@
                                 <thead>
                                 <th>ID</th>
                                 <th>NASLOV</th>
-                                <th>PODNASLOV</th>
+                                <th>SLIKE</th>
                                 <th>GRAD</th>
                                 <th>NASLOVNA STRANA</th>
                                 <th>STATUS</th>
@@ -40,7 +40,11 @@
                                     <tr>
                                         <td>{{$data->id}}</td>
                                         <td>{{$data->title}}</td>
-                                        <td>{{$data->subtitle}}</td>
+                                        <td>
+                                            <a href="/admin/hotels/{{$data->id}}/images-hotels" class="btn btn-warning">
+                                                <i class="fas fa-images"></i> SLIKE
+                                            </a>
+                                        </td>
                                         <td>@if($data->City){{$data->City->title}} @endif</td>
                                         <td>
                                             @if($data->home == 1) <strong>DA</strong>

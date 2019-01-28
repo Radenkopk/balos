@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Apartmans;
+use App\Models\ApartmansImages;
 use App\Models\Blog;
 use App\Models\Destination;
 use App\Models\Hotels;
@@ -33,8 +34,12 @@ class PagesController extends Controller
     }
 
     public function singleApartman($slug){
-        $apartman = Apartmans::where('slug',$slug)->where('active',1)->whereNull('deleted_at')->first();
+        $apartman = Apartmans::where('slug',$slug)->where('active',1)
+            ->whereNull('deleted_at')
+            ->first();
+        $imageApartman = ApartmansImages::where('parent_id', $apartman->id)->get();
         return view('single-apartman')
+            ->with('imageApartman', $imageApartman)
             ->with('apartman', $apartman);
     }
 

@@ -73,7 +73,13 @@ class ApartmansController extends Controller
 //            'region_city_id.required' => 'niste izabrali grad!'
         ]);
 
+        $fileNameWithext = $request->file('cover_image')->getClientOriginalName();
+        $filename = pathinfo($fileNameWithext, PATHINFO_FILENAME);
+        $extension = $request->file('cover_image')->getClientOriginalExtension();
+        $fileNameToStore = $filename.'_'.time().'.'.$extension;
+        $path = $request->file('cover_image')->storeAs('public/cover_image', $fileNameToStore);
         Apartmans::addApartman($request);
+        $request->cover_image = $fileNameToStore;
         return redirect('admin/apartmans')->with('sucsess', 'Uspešno kreiran apartman !');
     }
 
@@ -187,7 +193,6 @@ class ApartmansController extends Controller
             $data->deleted_at = now();
             $data->save();
         }
-       // $data->delete();
         return redirect('admin/apartmans')->with('error', 'Uspešno ste obrisali apartman !');
     }
 }

@@ -16,13 +16,12 @@
         @endforeach
     @endif
 
-    <form class="input-admin" action="/admin/apartmans" method="post">
+    <form class="input-admin" action="/admin/apartmans" method="post" enctype = "multipart/form-data">
         {{ csrf_field() }}
-        {{-- <h1>FOTO GALERIJA I OPIS</h1> --}}
-        {{-- <div class="form-group">
-          <label for="picture">Import Picture</label>
-          <input name="image" type="file" class="form-control-file" id="picture" aria-describedby="fileHelp">
-        </div> --}}
+         <h1>FOTO GALERIJA I OPIS</h1>
+         <div class="form-group">
+          {{Form::file('cover_image')}}
+        </div>
         <div class="form-group">
             <label for="title">Naslov</label>
             <input name="title"  type="text" class="form-control" id="title" placeholder="Unesite naslov">

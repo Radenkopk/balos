@@ -13,6 +13,7 @@ class Apartmans extends Model
     }
     public static function addApartman($request){
         $data = new Apartmans($request->all());
+
         $data->save();
         return $data;
     }

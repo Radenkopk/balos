@@ -23,22 +23,22 @@
 <script src="/js/admin/alerts.js">
 
 </script>
-{{-- <script type="text/javascript">
-$(document).ready(function(){
-
-    demo.initChartist();
-
-    $.notify({
-        icon: 'ti-gift',
-        message: "poruka"
-
-      },{
-          type: 'success',
-          timer: 4000
-      });
-
-});
-</script> --}}
+ <script type="text/javascript">
+// $(document).ready(function(){
+//
+//     demo.initChartist();
+//
+//     $.notify({
+//         icon: 'ti-gift',
+//         message: "poruka"
+//
+//       },{
+//           type: 'success',
+//           timer: 4000
+//       });
+//
+// });
+</script>
 <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 <script>
     CKEDITOR.replace( 'article-ckeditor' );

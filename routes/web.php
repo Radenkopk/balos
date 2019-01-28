@@ -40,6 +40,9 @@ Route::group(
     Route::resource('/blog', 'BlogController');
     Route::get('/last-minute/deleted', 'LastMinuteController@deletedLastMinute');
     Route::resource('/last-minute', 'LastMinuteController');
+
+//    destination
+
     Route::get('blog/{blog_id}/destination', 'DestinationController@index');
     Route::get('blog/{blog_id}/destination/deleted', 'DestinationController@deletedDestinations');
     Route::get('blog/{blog_id}/destination/create', 'DestinationController@create' );
@@ -48,4 +51,18 @@ Route::group(
     Route::put('blog/{blog_id}/destination/{id}', 'DestinationController@update');
     Route::delete('blog/{blog_id}/destination/{id}', 'DestinationController@destroy');
 
+//  apartmans images
+
+    Route::get('apartmans/{apartmans_id}/images-apartmans','ApartmansImagesController@index');
+    Route::get('apartmans/{apartmans_id}/images-apartmans/create','ApartmansImagesController@create');
+    Route::post('apartmans/{apartmans_id}/images-apartmans','ApartmansImagesController@store');
+
+
+//    hotels image
+    Route::get('hotels/{hotel_id}/images-hotels', 'HotelsImagesController@index');
+    Route::get('hotels/{hotel_id}/images-hotels/create', 'HotelsImagesController@create');
+    Route::post('hotels/{hotel_id}/images-hotels', 'HotelsImagesController@store');
+
+
 });
+
