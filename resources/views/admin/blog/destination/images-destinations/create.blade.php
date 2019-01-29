@@ -17,7 +17,7 @@
         @endforeach
     @endif
 
-    <form class="input-admin" action="/admin/apartmans/{{$apartmans_id}}/images-apartmans" method="post" enctype = "multipart/form-data">
+    <form class="input-admin" action="/admin/blog/{{$blog_id}}/destination/{{$destination_id}}/images-destinations" method="post" enctype = "multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
             {{Form::file('image')}}

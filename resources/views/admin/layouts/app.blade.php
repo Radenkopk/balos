@@ -12,7 +12,7 @@
     <div class="main-panel">
       @include('admin.inc.navbar')
 @include('admin.inc.alerts')
-      @yield('content')
+    @yield('content')
 
     </div>
     @include('admin.inc.footer')

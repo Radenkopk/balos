@@ -12,13 +12,14 @@ class ApartmansImages extends Model
         $data->parent_id = $request->apartmans_id;
 
 //        images
-        $fileNameWithext = $request->file('cover_image')->getClientOriginalName();
+if ($request->hasFile('image')) {
+        $fileNameWithext = $request->file('image')->getClientOriginalName();
         $filename = pathinfo($fileNameWithext, PATHINFO_FILENAME);
-        $extension = $request->file('cover_image')->getClientOriginalExtension();
+        $extension = $request->file('image')->getClientOriginalExtension();
         $fileNameToStore = $filename.'_'.time().'.'.$extension;
-        $path = $request->file('cover_image')->storeAs('public/cover_image', $fileNameToStore);
-        $data->cover_image = $fileNameToStore;
-
+        $path = $request->file('image')->storeAs('public/apartmans_image', $fileNameToStore);
+        $data->image = $fileNameToStore;
+}
 
         $data->save();
     }

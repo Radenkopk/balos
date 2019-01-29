@@ -13,15 +13,15 @@
     <div class="row">
         @foreach($allData as $data)
             <div class="col-md-3">
-            <img src="/storage/apartmans_image/{{$data->image}}"  class="img-thumbnail img-gallery">
-            <form action="/admin/apartmans/{{$apartmans_id}}/images-apartmans/{{$data->id}}" method="post" class="d-inline" >
-                {{ csrf_field() }}
-                {{method_field('DELETE')}}
-                <button type="submit" class="btn btn-danger btnDelete"> obrisi</button>
-            </form>
+            <img src="#"  class="img-thumbnail img-gallery">
+            {{--<form action="/admin/apartmans/{{$apartmans_id}}/images-apartmans/{{$data->id}}" method="post" class="d-inline" >--}}
+                {{--{{ csrf_field() }}--}}
+                {{--{{method_field('DELETE')}}--}}
+                {{--<button type="submit" class="btn btn-danger btnDelete"> obrisi</button>--}}
+            {{--</form>--}}
         </div>
         @endforeach
     </div>
     <br><br>
-    <a href="/admin/apartmans/{{$apartmans_id}}/images-apartmans/create" class="btn btn-success">dodaj novu sliku</a>
+    {{--<a href="/admin/apartmans/{{$apartmans_id}}/images-apartmans/create" class="btn btn-success">dodaj novu sliku</a>--}}
 @endsection

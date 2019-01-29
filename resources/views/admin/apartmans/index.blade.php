@@ -63,7 +63,7 @@
                                                 <form class="d-inline" method="POST" action="/admin/apartmans/{{$data->id}}">
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
-                                                    <button type="submit" class="btn btn-danger btnDelete"><i class="fas fa-trash-alt"></i> OBRIŠI</button>
+                                                    <button type="submit" class="btn btn-danger btn-delete-aparman"><i class="fas fa-trash-alt"></i> OBRIŠI</button>
                                                 </form>
                                             </div>
                                         </td>

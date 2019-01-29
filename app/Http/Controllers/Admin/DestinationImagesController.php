@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\ApartmansImages;
+use App\Models\DestinationImages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ApartmansImagesController extends Controller
+class DestinationImagesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($apartmans_id)
+    public function index($destination_id)
     {
-        $allData = ApartmansImages::allData($apartmans_id);
-        return view('admin.apartmans.images-apartmans.index')
+        $allData = DestinationImages::allData($destination_id);
+        return view('admin.blog.destination.images-destinations.index')
             ->with('allData', $allData)
-            ->with('apartmans_id', $apartmans_id);
+            ->with('destination_id', $destination_id);
     }
 
     /**
@@ -26,10 +26,10 @@ class ApartmansImagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($apartmans_id)
+    public function create($destination_id)
     {
-        return view('admin.apartmans.images-apartmans.create')
-            ->with('apartmans_id', $apartmans_id);
+        return view('admin.blog.destination.images-destinations.create')
+            ->with('destination');
     }
 
     /**
@@ -38,16 +38,9 @@ class ApartmansImagesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $aprtmans_id)
+    public function store(Request $request)
     {
-        $this->validate($request,[
-           'image' => 'required'
-        ],[
-            'image.required' => 'niste ubacili sliku'
-        ]);
-
-        ApartmansImages::adImage($request);
-        return redirect("admin/apartmans/$aprtmans_id/images-apartmans")->with('sucsess', 'Uspešno ubacili sliku !');
+        //
     }
 
     /**
@@ -90,10 +83,8 @@ class ApartmansImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($apartmans_id ,$id)
+    public function destroy($id)
     {
-        $data = ApartmansImages::find($id);
-        $data->delete();
-
-        return back()->with('error', 'Uspešno ste obrisali  sliku !');    }
+        //
+    }
 }

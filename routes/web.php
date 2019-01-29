@@ -51,6 +51,11 @@ Route::group(
     Route::put('blog/{blog_id}/destination/{id}', 'DestinationController@update');
     Route::delete('blog/{blog_id}/destination/{id}', 'DestinationController@destroy');
 
+//  destination images
+
+    Route::get('blog/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@index');
+    Route::get('blog/{blog_id}/destination/{destination_id}/images-destinations/create', 'DestinationImagesController@create');
+
 //  apartmans images
 
     Route::get('apartmans/{apartmans_id}/images-apartmans','ApartmansImagesController@index');

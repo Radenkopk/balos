@@ -25,8 +25,8 @@
         @foreach($imageApartman as $image)
         <div class="col-lg-3 col-sm-6">
           <div class="pic-with mb-3">
-            <a href="/storage/cover_image/{{$image->cover_image	}}" data-lightbox="myGallery" data-title="opis za sliku">
-              <img src="/storage/cover_image/{{$image->cover_image	}}" class="img-thumbnail ">
+            <a href="/storage/apartmans_image/{{$image->image	}}" data-lightbox="myGallery" data-title="opis za sliku">
+              <img src="/storage/apartmans_image/{{$image->image	}}" class="img-thumbnail ">
             </a>
           </div>
         </div>

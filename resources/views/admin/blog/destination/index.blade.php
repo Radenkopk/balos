@@ -21,6 +21,7 @@
                                 <thead>
                                 <th>ID</th>
                                 <th>Naslov</th>
+                                <th>Slike</th>
                                 <th>Tekst</th>
                                 <th>Status</th>
                                 <th> <span class="pull-right">IZMENI OBRISI</span> </th>
@@ -30,6 +31,11 @@
                                     <tr>
                                         <td>{{$data->id}}</td>
                                         <td>{{$data->title}}</td>
+                                        <td>
+                                            <a href="/admin/blog/{{$blog_id}}/destination/{{$data->id}}/images-destinations">
+                                                SLIKE
+                                            </a>
+                                        </td>
                                         <td>{!! substr($data->description, 0, 30) !!}</td>
                                         <td>
                                             @if($data->active == 1) aktivno <i class="fas fa-thumbs-up"></i>

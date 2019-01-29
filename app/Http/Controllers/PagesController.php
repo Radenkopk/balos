@@ -22,7 +22,8 @@ class PagesController extends Controller
         $apartmanDataHome = Apartmans::where('home',1)
             ->where('active',1)
             ->whereNull('deleted_at')->get();
-        $hotelData = Hotels::where('home',1)->where('active',1)->whereNull('deleted_at')->get();
+        $hotelData = Hotels::where('home',1)->where('active',1)
+            ->whereNull('deleted_at')->get();
         $blogData = Blog::where('home',1)
             ->where('active',1)
             ->whereNull('deleted_at')
