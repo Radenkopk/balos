@@ -56,12 +56,14 @@ Route::group(
     Route::get('apartmans/{apartmans_id}/images-apartmans','ApartmansImagesController@index');
     Route::get('apartmans/{apartmans_id}/images-apartmans/create','ApartmansImagesController@create');
     Route::post('apartmans/{apartmans_id}/images-apartmans','ApartmansImagesController@store');
+    Route::delete('apartmans/{apartmans_id}/images-apartmans/{id}','ApartmansImagesController@destroy');
 
 
 //    hotels image
     Route::get('hotels/{hotel_id}/images-hotels', 'HotelsImagesController@index');
     Route::get('hotels/{hotel_id}/images-hotels/create', 'HotelsImagesController@create');
     Route::post('hotels/{hotel_id}/images-hotels', 'HotelsImagesController@store');
+    Route::delete('hotels/{hotel_id}/images-hotels/{id}', 'HotelsImagesController@destroy');
 
 
 });

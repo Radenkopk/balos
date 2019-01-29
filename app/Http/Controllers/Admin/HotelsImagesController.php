@@ -41,6 +41,11 @@ class HotelsImagesController extends Controller
      */
     public function store(Request $request, $hotel_id)
     {
+        $this->validate($request,[
+            'image' => 'required'
+        ],[
+            'image.required' => 'Niste ubacili sliku'
+        ]);
         HotelImage::addImage($request);
         return redirect("admin/hotels/$hotel_id/images-hotels")->with('sucsess', 'Uspesno ste ubacili sliku');
     }
@@ -85,8 +90,11 @@ class HotelsImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy( $hotel_id ,$id)
     {
-        //
+        $data = HotelImage::find($id);
+        $data->delete();
+
+        return back()->with('error', 'uspesno ste obrisali sliku');
     }
 }

@@ -21,191 +21,18 @@
             <!-- GALLERY -->
             <div class="gallery ">
                 <div class="row ">
+                    @foreach($imagesHotel as $image)
                     <div class="col-lg-3 col-sm-6">
                         <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna13.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna13.jpg" class="img-thumbnail ">
+                            <a href="/storage/hotels_images/{{$image->image}}" data-lightbox="myGallery" data-title="opis za sliku">
+                                <img src="/storage/hotels_images/{{$image->image}}" class="img-thumbnail ">
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna2.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna2.jpg"  class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna3.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna3.jpg" class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna4.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna4.jpg" class="img-thumbnail" data-title="opis za sliku">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna5.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna5.jpg"  class="img-thumbnail ">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna6.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna6.jpg"  class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna7.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna7.jpg" alt="..." class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna8.jpeg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna8.jpeg" alt="..." class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna9.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna9.jpg"  class="img-thumbnail ">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna10.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna10.jpg"  class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna11.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna11.jpg"  class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna4.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna12.jpg"  class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna5.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna5.jpg"  class="img-thumbnail ">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna6.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna6.jpg" alt="..." class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna7.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna7.jpg" alt="..." class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna8.jpeg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna8.jpeg" alt="..." class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna5.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna5.jpg" class="img-thumbnail ">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna6.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna6.jpg" alt="..." class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna7.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna7.jpg" alt="..." class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna8.jpeg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna8.jpeg"  class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna5.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna5.jpg" class="img-thumbnail ">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna6.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna6.jpg" class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna7.jpg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna7.jpg"  class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="pic-with mb-3">
-                            <a href="images/nea-vrasna/nea-vrasna8.jpeg" data-lightbox="myGallery" data-title="opis za sliku">
-                                <img src="images/nea-vrasna/nea-vrasna8.jpeg" alt="..." class="img-thumbnail">
-                            </a>
-                        </div>
-                    </div>
+                        @endforeach
                 </div>
             </div>
+
             <!-- DESCRIPTION 2 -->
             <div class="gallery ">{!! $hotel->description2 !!}</div>
             <!-- GOOGLE MAP -->
@@ -232,5 +59,7 @@
 
 
         </div>
+    </div>
+
     </div>
 @endsection

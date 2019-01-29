@@ -6,6 +6,7 @@ use App\Models\Apartmans;
 use App\Models\ApartmansImages;
 use App\Models\Blog;
 use App\Models\Destination;
+use App\Models\HotelImage;
 use App\Models\Hotels;
 use App\Models\LastMinute;
 use App\Models\RegionCity;
@@ -48,8 +49,10 @@ class PagesController extends Controller
             ->where('active',1)
             ->whereNull('deleted_at')
             ->first();
+        $imagesHotel = HotelImage::where('parent_id', $hotel->id)->get();
         return view('single-hotel')
-            ->with('hotel',$hotel);
+            ->with('hotel',$hotel)
+            ->with('imagesHotel', $imagesHotel);
     }
 
     public function singleRegion($slug){

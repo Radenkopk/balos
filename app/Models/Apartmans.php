@@ -11,6 +11,9 @@ class Apartmans extends Model
     public function City(){
         return $this->hasOne('App\Models\RegionCity', 'id','region_city_id');
     }
+
+
+
     public static function addApartman($request){
         $data = new Apartmans($request->all());
 
@@ -18,10 +21,11 @@ class Apartmans extends Model
         return $data;
     }
 
+
     public static function allData(){
         return self::orderBy('created_at','DESC')
-            ->with('City')
             ->whereNull('deleted_at')
+            ->with('City')
             ->paginate(30);
     }
 

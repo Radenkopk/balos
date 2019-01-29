@@ -40,15 +40,13 @@ class ApartmansImagesController extends Controller
      */
     public function store(Request $request, $aprtmans_id)
     {
-        $fileNameWithext = $request->file('cover_image')->getClientOriginalName();
-        $filename = pathinfo($fileNameWithext, PATHINFO_FILENAME);
-        $extension = $request->file('cover_image')->getClientOriginalExtension();
-        $fileNameToStore = $filename.'_'.time().'.'.$extension;
-        $path = $request->file('cover_image')->storeAs('public/cover_image', $fileNameToStore);
-//        dd($fileNameToStore);
+        $this->validate($request,[
+           'cover_image' => 'required'
+        ],[
+            'cover_image.required' => 'niste ubacili sliku'
+        ]);
+
         ApartmansImages::adImage($request);
-//        dd($data->cover_image );
-//        $request->cover_image = $fileNameToStore;
         return redirect("admin/apartmans/$aprtmans_id/images-apartmans")->with('sucsess', 'Uspešno ubacili sliku !');
     }
 
@@ -92,8 +90,10 @@ class ApartmansImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($apartmans_id ,$id)
     {
-        //
-    }
+        $data = ApartmansImages::find($id);
+        $data->delete();
+
+        return back()->with('error', 'Uspešno ste obrisali  sliku !');    }
 }

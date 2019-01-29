@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="/css/balos/owl.theme.default.css">
 <link rel="stylesheet" href="/css/balos/animate.css">
 <!-- gallery -->
-<link rel="stylesheet" href="/css/balos/lightbox.min.css">
+<link rel="stylesheet" href="/css/lightbox.min.css">
 <!-- Custom css -->
 <link rel="stylesheet" href="/css/balos/style.css">
 <link rel="stylesheet" href="/css/balos/header.css">
