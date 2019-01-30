@@ -18,11 +18,21 @@ class Hotels extends Model
         return $data;
     }
 
-    public static function allData(){
-        return self::orderBy('created_at','DESC')
-            ->with('City')
-            ->whereNull('deleted_at') // ako je null u deleted at da vrati ako nije null da ne vraca
-            ->paginate(30);
+    public static function allData($keyword = false){
+
+        if ($keyword){
+            return self::orderBy('created_at','DESC')
+                ->with('City')
+                ->whereRaw('lower(title) like "%' . strtolower($keyword) . '%"')
+                ->whereNull('deleted_at')
+                ->paginate(30);
+        }else{
+            return self::orderBy('created_at','DESC')
+                ->with('City')
+                ->whereNull('deleted_at')
+                ->paginate(30);
+        }
+
     }
 
     public static function allDeletedData(){

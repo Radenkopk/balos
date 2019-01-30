@@ -14,10 +14,16 @@ class HotelsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $allData = Hotels::allData();
-        return view('admin.hotels.index')->with('allData', $allData);
+        if ($request->has('keyword')){
+            $keyword = $request->keyword;
+        }else{
+            $keyword = false;
+        };
+        $allData = Hotels::allData($keyword);
+        return view('admin.hotels.index')
+            ->with('allData', $allData);
     }
 
 
