@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+
+use App\Models\Destination;
 use App\Models\DestinationImages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,6 +17,7 @@ class DestinationImagesController extends Controller
      */
     public function index($destination_id)
     {
+
         $allData = DestinationImages::allData($destination_id);
         return view('admin.blog.destination.images-destinations.index')
             ->with('allData', $allData)
@@ -28,8 +31,11 @@ class DestinationImagesController extends Controller
      */
     public function create($destination_id)
     {
+        $blog = Destination::get();
+//        dd($blog);
         return view('admin.blog.destination.images-destinations.create')
-            ->with('destination');
+            ->with('blog', $blog)
+            ->with('destination', $destination_id);
     }
 
     /**
@@ -38,9 +44,11 @@ class DestinationImagesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $destination_id)
     {
-        //
+        DestinationImages::addImage($request);
+        return redirect("admin/blog/$blog_id/destination/$destination_id/images-destinations")
+            ->with('sucsess','uspesno ste ubacili sliku');
     }
 
     /**

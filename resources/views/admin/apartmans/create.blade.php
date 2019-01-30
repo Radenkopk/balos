@@ -16,12 +16,8 @@
         @endforeach
     @endif
 
-    <form class="input-admin" action="/admin/apartmans" method="post" enctype = "multipart/form-data">
+    <form class="input-admin" action="/admin/apartmans" method="post">
         {{ csrf_field() }}
-         <h1>FOTO GALERIJA I OPIS</h1>
-         <div class="form-group">
-          {{Form::file('cover_image')}}
-        </div>
         <div class="form-group">
             <label for="title">Naslov</label>
             <input name="title"  type="text" class="form-control" id="title" placeholder="Unesite naslov">

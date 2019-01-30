@@ -55,6 +55,7 @@ Route::group(
 
     Route::get('blog/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@index');
     Route::get('blog/{blog_id}/destination/{destination_id}/images-destinations/create', 'DestinationImagesController@create');
+    Route::post('blog/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@store');
 
 //  apartmans images
 

@@ -23,5 +23,5 @@
         @endforeach
     </div>
     <br><br>
-    {{--<a href="/admin/apartmans/{{$apartmans_id}}/images-apartmans/create" class="btn btn-success">dodaj novu sliku</a>--}}
+    <a href="/admin/blog/{{$blog_id}}/destinaton/{{$destination_id}}/images-destinations/create" class="btn btn-success">dodaj novu sliku</a>
 @endsection

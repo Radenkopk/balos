@@ -72,14 +72,8 @@ class ApartmansController extends Controller
             'pricelist.required' => 'niste popunili cenovinik!',
 //            'region_city_id.required' => 'niste izabrali grad!'
         ]);
-
-        $fileNameWithext = $request->file('cover_image')->getClientOriginalName();
-        $filename = pathinfo($fileNameWithext, PATHINFO_FILENAME);
-        $extension = $request->file('cover_image')->getClientOriginalExtension();
-        $fileNameToStore = $filename.'_'.time().'.'.$extension;
-        $path = $request->file('cover_image')->storeAs('public/cover_image', $fileNameToStore);
+        
         Apartmans::addApartman($request);
-        $request->cover_image = $fileNameToStore;
         return redirect('admin/apartmans')->with('sucsess', 'Uspešno kreiran apartman !');
     }
 
