@@ -14,12 +14,16 @@ class ApartmansController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $allData = Apartmans::allData();
-//        foreach ($allData as $data){
-//            dd($data);
-//        }
+
+        if($request->has('keyword')){
+            $keyword = $request->keyword;
+        }else{
+            $keyword = false;
+        }
+        $allData = Apartmans::allData($keyword);
+
 
         return view('admin.apartmans.index')->with('allData', $allData);
     }
@@ -72,7 +76,7 @@ class ApartmansController extends Controller
             'pricelist.required' => 'niste popunili cenovinik!',
 //            'region_city_id.required' => 'niste izabrali grad!'
         ]);
-        
+
         Apartmans::addApartman($request);
         return redirect('admin/apartmans')->with('sucsess', 'Uspešno kreiran apartman !');
     }

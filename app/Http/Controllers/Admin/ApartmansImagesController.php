@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Storage;
+
 use App\Models\ApartmansImages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -92,8 +94,21 @@ class ApartmansImagesController extends Controller
      */
     public function destroy($apartmans_id ,$id)
     {
+
         $data = ApartmansImages::find($id);
+//        dd($data->image);
+        Storage::delete('/public/apartmans_image/'. $data->image);
+
+
+
+
+
+
         $data->delete();
+
+
+
+//        Storage::delete('file.jpg');
 
         return back()->with('error', 'Uspešno ste obrisali  sliku !');    }
 }

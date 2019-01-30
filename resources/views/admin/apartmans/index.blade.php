@@ -12,13 +12,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-
+                    <form action="/admin/apartmans" method="get">
                     <div class=" search input-admin">
 
                         <label for="search"></label>
-                        <input type="text" class="form-control "   id="search" placeholder="Pretraži">
-                        <button type="submit" class="btn btn-primary" <i class="fas fa-search"></i> Pretraži</button>
+                        <input type="text" class="form-control " name="keyword"   id="search" placeholder="Pretraži">
+                        <button type="submit" class="btn btn-primary"> <i class="fas fa-search"></i> Pretraži</button>
                     </div>
+                    </form>
 
                     <div class="card">
                         <div class="header">

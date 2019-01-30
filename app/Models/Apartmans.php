@@ -20,11 +20,20 @@ class Apartmans extends Model
     }
 
 
-    public static function allData(){
-        return self::orderBy('created_at','DESC')
-            ->whereNull('deleted_at')
-            ->with('City')
-            ->paginate(30);
+    public static function allData($keyword = false){
+        if($keyword){
+            return self::orderBy('created_at', 'DESC')
+                ->whereRaw('lower(title) like "%' . strtolower($keyword) . '%"')
+                ->whereNull('deleted_at')
+                ->with('City')
+                ->paginate(30);
+        }else {
+
+            return self::orderBy('created_at', 'DESC')
+                ->whereNull('deleted_at')
+                ->with('City')
+                ->paginate(30);
+        }
     }
 
     public static function allDeletedData(){

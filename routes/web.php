@@ -42,14 +42,24 @@ Route::group(
     Route::resource('/last-minute', 'LastMinuteController');
 
 //    destination
+    Route::group(
+        ['prefix' => 'blog'], function(){
+        Route::get('/{blog_id}/destination', 'DestinationController@index');
+        Route::get('/{blog_id}/destination/deleted', 'DestinationController@deletedDestinations');
+        Route::get('/{blog_id}/destination/create', 'DestinationController@create' );
+        Route::post('/{blog_id}/destination', 'DestinationController@store');
+        Route::get('/{blog_id}/destination/{id}/edit', 'DestinationController@edit');
+        Route::put('/{blog_id}/destination/{id}', 'DestinationController@update');
+        Route::delete('/{blog_id}/destination/{id}', 'DestinationController@destroy');
+    });
 
-    Route::get('blog/{blog_id}/destination', 'DestinationController@index');
+   /* Route::get('blog/{blog_id}/destination', 'DestinationController@index');
     Route::get('blog/{blog_id}/destination/deleted', 'DestinationController@deletedDestinations');
     Route::get('blog/{blog_id}/destination/create', 'DestinationController@create' );
     Route::post('blog/{blog_id}/destination', 'DestinationController@store');
     Route::get('blog/{blog_id}/destination/{id}/edit', 'DestinationController@edit');
     Route::put('blog/{blog_id}/destination/{id}', 'DestinationController@update');
-    Route::delete('blog/{blog_id}/destination/{id}', 'DestinationController@destroy');
+    Route::delete('blog/{blog_id}/destination/{id}', 'DestinationController@destroy'); */
 
 //  destination images
 

@@ -15,12 +15,13 @@ class DestinationImagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($destination_id)
+    public function index($blog_id,$destination_id)
     {
-
+//dd($blog_id,$destination_id);
         $allData = DestinationImages::allData($destination_id);
         return view('admin.blog.destination.images-destinations.index')
             ->with('allData', $allData)
+            ->with('blog_id',$blog_id)
             ->with('destination_id', $destination_id);
     }
 
@@ -31,8 +32,8 @@ class DestinationImagesController extends Controller
      */
     public function create($destination_id)
     {
-        $blog = Destination::get();
-//        dd($blog);
+//        $blog = Destination::get();
+
         return view('admin.blog.destination.images-destinations.create')
             ->with('blog', $blog)
             ->with('destination', $destination_id);

@@ -27,7 +27,7 @@ class DestinationImages extends Model
     }
 
 
-    public static function allData($destination_id){
+    public static function allData( $destination_id){
         return self::where('parent_id',$destination_id)->get();
     }
 }
