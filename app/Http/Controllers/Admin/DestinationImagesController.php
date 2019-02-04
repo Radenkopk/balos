@@ -30,13 +30,13 @@ class DestinationImagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($destination_id)
+    public function create($blog_id,$destination_id)
     {
-//        $blog = Destination::get();
+
 
         return view('admin.blog.destination.images-destinations.create')
-            ->with('blog', $blog)
-            ->with('destination', $destination_id);
+            ->with('blog_id',$blog_id)
+            ->with('destination_id', $destination_id);
     }
 
     /**
@@ -45,7 +45,7 @@ class DestinationImagesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $destination_id)
+    public function store(Request $request,$blog_id, $destination_id)
     {
         DestinationImages::addImage($request);
         return redirect("admin/blog/$blog_id/destination/$destination_id/images-destinations")

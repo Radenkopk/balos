@@ -13,7 +13,7 @@
     <div class="row">
         @foreach($allData as $data)
             <div class="col-md-3">
-            <img src="#"  class="img-thumbnail img-gallery">
+            <img src="/storage/destinations_images/{{$data->image}}"  class="img-thumbnail img-gallery">
             {{--<form action="/admin/apartmans/{{$apartmans_id}}/images-apartmans/{{$data->id}}" method="post" class="d-inline" >--}}
                 {{--{{ csrf_field() }}--}}
                 {{--{{method_field('DELETE')}}--}}

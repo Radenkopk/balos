@@ -51,21 +51,20 @@ Route::group(
         Route::get('/{blog_id}/destination/{id}/edit', 'DestinationController@edit');
         Route::put('/{blog_id}/destination/{id}', 'DestinationController@update');
         Route::delete('/{blog_id}/destination/{id}', 'DestinationController@destroy');
+
+//        Route::group(
+//            ['prefix' => 'destination'], function() {
+//            Route::get('/{destination_id}/images-destinations', 'DestinationImagesController@index');
+//        });
+
     });
 
-   /* Route::get('blog/{blog_id}/destination', 'DestinationController@index');
-    Route::get('blog/{blog_id}/destination/deleted', 'DestinationController@deletedDestinations');
-    Route::get('blog/{blog_id}/destination/create', 'DestinationController@create' );
-    Route::post('blog/{blog_id}/destination', 'DestinationController@store');
-    Route::get('blog/{blog_id}/destination/{id}/edit', 'DestinationController@edit');
-    Route::put('blog/{blog_id}/destination/{id}', 'DestinationController@update');
-    Route::delete('blog/{blog_id}/destination/{id}', 'DestinationController@destroy'); */
 
 //  destination images
 
-    Route::get('blog/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@index');
-    Route::get('blog/{blog_id}/destination/{destination_id}/images-destinations/create', 'DestinationImagesController@create');
-    Route::post('blog/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@store');
+        Route::get('/blog/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@index');
+        Route::get('/blog/{blog_id}/destination/{destination_id}/images-destinations/create', 'DestinationImagesController@create');
+        Route::post('/blog/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@store');
 
 //  apartmans images
 

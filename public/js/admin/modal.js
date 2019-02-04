@@ -35,3 +35,6 @@ $('.btn-delete-hotel').click(function(e){
         $(e.target).closest('form').submit() // Post the surrounding form
     }
 });
+
+var x = document.querySelectorAll('.counter').length;
+document.querySelector('.nesto').textContent = x;

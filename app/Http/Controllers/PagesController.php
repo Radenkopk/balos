@@ -76,6 +76,8 @@ class PagesController extends Controller
         $cityData = RegionCity::where('region_id', $id)->get();
 
         foreach ($cityData as $city){
+//            dd($city);
+
             //da qverujes apartmants i da vidis dal neki apartman ima taj grad
             //ako ga ima city ostaje//
             //ako ga nema unsetuj ga
@@ -89,7 +91,7 @@ class PagesController extends Controller
 
        }
        if($type == 'apartmans'){
-//           $apartman = Apartmans::where('active',1)->first();
+//
        }
 
         return view('single-region')

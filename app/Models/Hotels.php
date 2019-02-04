@@ -25,10 +25,6 @@ class Hotels extends Model
                 ->with('City')
                 ->whereRaw('lower(title) like "%' . strtolower($keyword) . '%"')
                 ->whereNull('deleted_at')
-                ->paginate(30);
-        }else{
-            return self::orderBy('created_at','DESC')
-                ->with('City')
                 ->whereNull('deleted_at')
                 ->paginate(30);
         }

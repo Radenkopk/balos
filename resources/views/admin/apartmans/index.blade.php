@@ -20,7 +20,7 @@
                         <button type="submit" class="btn btn-primary"> <i class="fas fa-search"></i> Pretraži</button>
                     </div>
                     </form>
-
+                    <h4> ukupno imate <span class="nesto">0</span> apartmana </h4>
                     <div class="card">
                         <div class="header">
                             <h4 class="title">APARTMANI</h4>
@@ -38,7 +38,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach($allData as $data)
-                                    <tr>
+                                    <tr class="counter">
                                         <td>{{$data->id}}</td>
                                         <td>{{$data->title}}</td>
                                         <td>

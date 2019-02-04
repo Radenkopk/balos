@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class DestinationImages extends Model
 {
+    protected $guarded = [];
+
     public static function addImage($request){
 
         $data = new DestinationImages($request->all());
