@@ -52,33 +52,41 @@ Route::group(
         Route::put('/{blog_id}/destination/{id}', 'DestinationController@update');
         Route::delete('/{blog_id}/destination/{id}', 'DestinationController@destroy');
 
-//        Route::group(
-//            ['prefix' => 'destination'], function() {
-//            Route::get('/{destination_id}/images-destinations', 'DestinationImagesController@index');
-//        });
+        //  destination images
+
+        Route::get('/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@index');
+        Route::get('/{blog_id}/destination/{destination_id}/images-destinations/create', 'DestinationImagesController@create');
+        Route::post('/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@store');
+        Route::delete('/{blog_id}/destination/{destination_id}/images-destinations/{id}', 'DestinationImagesController@destroy');
 
     });
 
 
-//  destination images
 
-        Route::get('/blog/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@index');
-        Route::get('/blog/{blog_id}/destination/{destination_id}/images-destinations/create', 'DestinationImagesController@create');
-        Route::post('/blog/{blog_id}/destination/{destination_id}/images-destinations', 'DestinationImagesController@store');
 
+    Route::group(['prefix' => 'apartmans'], function () {
+        
 //  apartmans images
 
-    Route::get('apartmans/{apartmans_id}/images-apartmans','ApartmansImagesController@index');
-    Route::get('apartmans/{apartmans_id}/images-apartmans/create','ApartmansImagesController@create');
-    Route::post('apartmans/{apartmans_id}/images-apartmans','ApartmansImagesController@store');
-    Route::delete('apartmans/{apartmans_id}/images-apartmans/{id}','ApartmansImagesController@destroy');
+        Route::get('/{apartmans_id}/images-apartmans','ApartmansImagesController@index');
+        Route::get('/{apartmans_id}/images-apartmans/create','ApartmansImagesController@create');
+        Route::post('/{apartmans_id}/images-apartmans','ApartmansImagesController@store');
+        Route::delete('/{apartmans_id}/images-apartmans/{id}','ApartmansImagesController@destroy');
+    });
 
 
-//    hotels image
-    Route::get('hotels/{hotel_id}/images-hotels', 'HotelsImagesController@index');
-    Route::get('hotels/{hotel_id}/images-hotels/create', 'HotelsImagesController@create');
-    Route::post('hotels/{hotel_id}/images-hotels', 'HotelsImagesController@store');
-    Route::delete('hotels/{hotel_id}/images-hotels/{id}', 'HotelsImagesController@destroy');
+   
+  Route::group(['prefix' => 'hotels'], function () {
+      //    hotels image
+
+    Route::get('/{hotel_id}/images-hotels', 'HotelsImagesController@index');
+    Route::get('/{hotel_id}/images-hotels/create', 'HotelsImagesController@create');
+    Route::post('/{hotel_id}/images-hotels', 'HotelsImagesController@store');
+    Route::delete('/{hotel_id}/images-hotels/{id}', 'HotelsImagesController@destroy');
+
+  });
+
+
 
 
 });

@@ -21,6 +21,8 @@ class HotelsController extends Controller
         }else{
             $keyword = false;
         };
+
+
         $allData = Hotels::allData($keyword);
         return view('admin.hotels.index')
             ->with('allData', $allData);

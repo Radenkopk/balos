@@ -20,6 +20,7 @@
                             <button type="submit" class="btn btn-primary"> <i class="fas fa-search"></i> Pretraži</button>
                         </div>
                     </form>
+                    <h4> Ukupno imate <span class="number">0</span> Hotela </h4>
                     <div class="card">
                         <div class="header">
                             <h4 class="title">HOTELI</h4>
@@ -37,7 +38,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach($allData as $data)
-                                    <tr>
+                                    <tr class="counter">
                                         <td>{{$data->id}}</td>
                                         <td>{{$data->title}}</td>
                                         <td>

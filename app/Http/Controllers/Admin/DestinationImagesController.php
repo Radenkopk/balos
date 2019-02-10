@@ -7,6 +7,8 @@ use App\Models\Destination;
 use App\Models\DestinationImages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+
 
 class DestinationImagesController extends Controller
 {
@@ -92,8 +94,13 @@ class DestinationImagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($blog_id, $destination_id ,$id)
     {
-        //
+        $data = DestinationImages::find($id);
+
+         Storage::delete('/public/destinations_images/'.$data->image);
+         $data->delete();
+         return back()->with('error', 'uspesno obrisano');
+
     }
 }

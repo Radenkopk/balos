@@ -17,7 +17,7 @@
             <form action="/admin/apartmans/{{$apartmans_id}}/images-apartmans/{{$data->id}}" method="post" class="d-inline" >
                 {{ csrf_field() }}
                 {{method_field('DELETE')}}
-                <button type="submit" class="btn btn-danger btnDelete"> obrisi</button>
+                <button type="submit" class="btn btn-danger btnDelete btnDelete"> obrisi</button>
             </form>
         </div>
         @endforeach

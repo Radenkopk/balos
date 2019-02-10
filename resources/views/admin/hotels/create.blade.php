@@ -65,6 +65,10 @@
                 @endforeach
             </select>
         </div>
+        <div class="form-group">
+            <label for="slug">Slug</label>
+            <input name="slug"   type="text"  class="form-control" id="slug" placeholder="Unesite slug">
+        </div>
         <br>
         <div class="checkbox">
             <label><input name="home" type="checkbox" value="1">Naslovna strana</label>

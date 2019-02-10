@@ -6,6 +6,7 @@ use App\Models\Apartmans;
 use App\Models\ApartmansImages;
 use App\Models\Blog;
 use App\Models\Destination;
+use App\Models\DestinationImages;
 use App\Models\HotelImage;
 use App\Models\Hotels;
 use App\Models\LastMinute;
@@ -17,17 +18,27 @@ class PagesController extends Controller
 
 {
     public function home(){
-        $apartmanData = Apartmans::where('active',1)
-            ->whereNull('deleted_at')->get();
-        $apartmanDataHome = Apartmans::where('home',1)
-            ->where('active',1)
-            ->whereNull('deleted_at')->get();
-        $hotelData = Hotels::where('home',1)->where('active',1)
-            ->whereNull('deleted_at')->get();
-        $blogData = Blog::where('home',1)
-            ->where('active',1)
-            ->whereNull('deleted_at')
-            ->get();
+        $apartmanData = Apartmans::where([
+            ['active',1],
+            ['deleted_at', null],
+        ])->get();
+        $apartmanDataHome = Apartmans::where([
+            ['home', 1],
+            ['active', 1],
+            ['deleted_at', null],
+        ])->get();
+        $hotelData = Hotels::where([
+            ['home',1],
+            ['active',1],
+            ['deleted_at', null],
+        ])->get();
+
+        $blogData = Blog::where([
+            ['home',1],
+            ['active',1],
+            ['deleted_at', null],
+        ])->get();
+
         return view('home')
             ->with('hotelData', $hotelData)
             ->with('apartmanData', $apartmanData)
@@ -36,9 +47,15 @@ class PagesController extends Controller
     }
 
     public function singleApartman($slug){
-        $apartman = Apartmans::where('slug',$slug)->where('active',1)
-            ->whereNull('deleted_at')
-            ->first();
+        // $apartman = Apartmans::where('slug',$slug)->where('active',1)
+        //     ->whereNull('deleted_at')
+        //     ->first();
+        $apartman = Apartmans::where([
+            ['slug',$slug],
+            ['active',1],
+            ['deleted_at', null],
+        ])->first();
+
         $imageApartman = ApartmansImages::where('parent_id', $apartman->id)->get();
         return view('single-apartman')
             ->with('imageApartman', $imageApartman)
@@ -118,15 +135,21 @@ class PagesController extends Controller
     }
 
     public function destination($slug){
+
+
+
         $blogData = Blog::where('active',1)->where('slug',$slug)->first();
         $destinationData = Destination::where('parent_id',$blogData->id )
+
             ->whereNull('deleted_at')
             ->where('active',1)
             ->get();
-
-
+        foreach ($destinationData as $data) {
+            $images = DestinationImages::where('parent_id', $data->id)->get();
+        }
         return view('blog-destination')
             ->with('destinationData', $destinationData)
+            ->with('images', $images)
             ->with('slug',$slug)
             ->with('blogData', $blogData);
 

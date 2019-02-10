@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Apartmans;
+use App\Models\ApartmansImages;
 use App\Models\RegionCity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ApartmansController extends Controller
 {
@@ -25,7 +27,8 @@ class ApartmansController extends Controller
         $allData = Apartmans::allData($keyword);
 
 
-        return view('admin.apartmans.index')->with('allData', $allData);
+        return view('admin.apartmans.index')
+        ->with('allData', $allData);
     }
 
 
@@ -186,6 +189,10 @@ class ApartmansController extends Controller
         $data = Apartmans::find($id);
 
         if($data->deleted_at != NULL){
+            $image = ApartmansImages::where('parent_id', $id)->pluck('image');
+            // dd($image);         
+            // Storage::delete(['/public/apartmans_image/'. $image]);
+               Storage::delete([$image]);
             $data->delete();
         }else {
             $data->deleted_at = now();

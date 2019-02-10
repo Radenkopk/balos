@@ -10,34 +10,15 @@
             <div>{!!$destination->description!!}</div>
 
             <div class="row ">
+                @foreach($images as $image)
                 <div class="col-lg-3 col-sm-6">
                     <div class="mb-3">
-                        <a href="/images/panda.jpg" data-lightbox="myGallery">
-                            <img src="/images/panda.jpg" class="img-thumbnail ">
+                        <a href="/storage/destinations_images/{{$image->image}}" data-lightbox="myGallery">
+                            <img src="/storage/destinations_images/{{$image->image}}" class="img-thumbnail ">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class=" mb-3">
-                        <a href="/images/panda.jpg" data-lightbox="myGallery">
-                            <img src="/images/panda.jpg" class="img-thumbnail ">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="mb-3">
-                        <a href="/images/panda.jpg" data-lightbox="myGallery">
-                            <img src="/images/panda.jpg" class="img-thumbnail ">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class=" mb-3">
-                        <a href="/images/panda.jpg" data-lightbox="myGallery">
-                            <img src="/images/panda.jpg" class="img-thumbnail ">
-                        </a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         @endforeach
     </div>

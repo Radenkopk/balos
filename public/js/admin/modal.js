@@ -36,5 +36,6 @@ $('.btn-delete-hotel').click(function(e){
     }
 });
 
+
 var x = document.querySelectorAll('.counter').length;
-document.querySelector('.nesto').textContent = x;
+document.querySelector('.number').textContent = x;

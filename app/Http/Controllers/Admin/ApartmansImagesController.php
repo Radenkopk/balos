@@ -98,12 +98,6 @@ class ApartmansImagesController extends Controller
         $data = ApartmansImages::find($id);
 //        dd($data->image);
         Storage::delete('/public/apartmans_image/'. $data->image);
-
-
-
-
-
-
         $data->delete();
 
 

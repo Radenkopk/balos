@@ -20,7 +20,7 @@
                         <button type="submit" class="btn btn-primary"> <i class="fas fa-search"></i> Pretraži</button>
                     </div>
                     </form>
-                    <h4> ukupno imate <span class="nesto">0</span> apartmana </h4>
+                    <h4> Ukupno imate <span class="number">0</span> Apartmana </h4>
                     <div class="card">
                         <div class="header">
                             <h4 class="title">APARTMANI</h4>

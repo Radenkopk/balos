@@ -32,8 +32,8 @@
                                         <td>{{$data->id}}</td>
                                         <td>{{$data->title}}</td>
                                         <td>
-                                            <a href="/admin/blog/{{$blog_id}}/destination/{{$data->id}}/images-destinations">
-                                                SLIKE
+                                            <a href="/admin/blog/{{$blog_id}}/destination/{{$data->id}}/images-destinations" class="btn btn-warning">
+                                                <i class="fas fa-images"></i> SLIKE
                                             </a>
                                         </td>
                                         <td>{!! substr($data->description, 0, 30) !!}</td>
