@@ -190,9 +190,10 @@ class ApartmansController extends Controller
 
         if($data->deleted_at != NULL){
             $image = ApartmansImages::where('parent_id', $id)->pluck('image');
-            // dd($image);         
-            // Storage::delete(['/public/apartmans_image/'. $image]);
-               Storage::delete([$image]);
+            // dd($image); 
+            foreach($image as $img){
+                Storage::delete('/public/apartmans_image/'. $img);
+            }        
             $data->delete();
         }else {
             $data->deleted_at = now();

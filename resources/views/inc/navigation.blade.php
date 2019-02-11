@@ -13,7 +13,7 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">
-          GRCKA LETOVANJE 2018 <i class="fa fa-angle-down" ></i>
+          GRCKA LETOVANJE <i class="fa fa-angle-down" ></i>
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">GRCKA APARTMANI LETOVANJE <i class="fa fa-angle-right"></i></a>

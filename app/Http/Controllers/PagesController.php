@@ -63,21 +63,31 @@ class PagesController extends Controller
     }
 
     public function singleHotel($slug){
-        $hotel = Hotels::where('slug',$slug)
-            ->where('active',1)
-            ->whereNull('deleted_at')
-            ->first();
+
+        $hotel = Hotels::where([
+            ['slug', $slug],
+            ['active',1],
+            ['deleted_at', null],
+        ])->first();
+
         $imagesHotel = HotelImage::where('parent_id', $hotel->id)->get();
+
         return view('single-hotel')
             ->with('hotel',$hotel)
             ->with('imagesHotel', $imagesHotel);
     }
 
     public function singleRegion($slug){
-        $region = Regions::where('slug',$slug)
-            ->whereNull('deleted_at')
-            ->where('active',1)
-            ->first();
+        // $region = Regions::where('slug',$slug)
+        //     ->whereNull('deleted_at')
+        //     ->where('active',1)
+        //     ->first();
+        $region = Regions::where([
+            ['slug', $slug],
+            ['active',1],
+            ['deleted_at', null],
+        ])->first();
+
         $id = $region->id;
         $cityData = RegionCity::where('region_id', $id)->get();
 
@@ -92,12 +102,14 @@ class PagesController extends Controller
         $id = $region->id;
         $cityData = RegionCity::where('region_id', $id)->get();
 
-        foreach ($cityData as $city){
-//            dd($city);
+        foreach ($cityData as $key => $city ){
+            if($type == 'hotels'){
+                $hotelsCheck = Hotels::where('region_city_id', $city->id)->count();
+                if ($hotelsCheck == 0) {
+                    unset($cityData[$key]);
+                }
+            }
 
-            //da qverujes apartmants i da vidis dal neki apartman ima taj grad
-            //ako ga ima city ostaje//
-            //ako ga nema unsetuj ga
         }
 
        if($type == 'hotels'){
@@ -146,10 +158,11 @@ class PagesController extends Controller
             ->get();
         foreach ($destinationData as $data) {
             $images = DestinationImages::where('parent_id', $data->id)->get();
+            $data->images = $images;
         }
         return view('blog-destination')
             ->with('destinationData', $destinationData)
-            ->with('images', $images)
+           // ->with('images', $images)
             ->with('slug',$slug)
             ->with('blogData', $blogData);
 

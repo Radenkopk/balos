@@ -10,7 +10,7 @@
             <div>{!!$destination->description!!}</div>
 
             <div class="row ">
-                @foreach($images as $image)
+                @foreach($destination->images as $image)
                 <div class="col-lg-3 col-sm-6">
                     <div class="mb-3">
                         <a href="/storage/destinations_images/{{$image->image}}" data-lightbox="myGallery">
