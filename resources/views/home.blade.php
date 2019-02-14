@@ -31,7 +31,7 @@
   <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
     <div class="card shadow">
       <a  href="/single-hotel/{{$data->slug}}">
-        <img class="card-img-top" src="images/panda.jpg" alt="Card image">
+        <img class="card-img-top" src="storage/cover_hotel_image/{{$data->image}}" alt="Card image">
       </a>
       <div class="card-body">
         <h5 class="card-title">{{$data->title}}</h5>
@@ -67,7 +67,7 @@
   <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
     <div class="card shadow">
       <a  href="/blog-destination/{{$blog->slug}}">
-        <img class="card-img-top" src="images/panda.jpg" alt="Card image">
+        <img class="card-img-top" src="storage/cover_blog_image/{{$blog->image}}" alt="Card image">
       </a>
       <div class="card-body">
         <h5 class="card-title">{{$blog->title}}</h5>

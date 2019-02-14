@@ -4,9 +4,9 @@
     <span class="text-secondary ml-3"> | {{$blogData->title}}</span>
     <div class="line"></div>
     <div class="parga-content bg-light mt-5 text-justify text-muted">
+            <img class="img-fluid my-5" src="/storage/cover_blog_image/{{$blogData->image}}">
         @foreach ($destinationData as $destination)
             <h1>{{$destination->title}}</h1>
-             {{--<img class="img-fluid my-5" src="images/blog/parga/parga1.jpg" alt="">--}}
             <div>{!!$destination->description!!}</div>
 
             <div class="row ">
