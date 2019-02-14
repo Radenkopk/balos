@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Blog;
 use App\Models\Destination;
+use App\Models\DestinationImages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+
 
 class BlogController extends Controller
 {
@@ -133,8 +136,26 @@ class BlogController extends Controller
     {
         $data = Blog::find($id);
         if ($data->deleted_at !=  NULL){
-            Destination::where('parent_id',$id)->delete();
+            $destinations = Destination::where('parent_id',$id)->get();
+            // dd($destinations);
+
+            foreach ($destinations as $desc) {
+                // dd($desc);
+                $nn = DestinationImages::where('parent_id', $desc->id)->get();
+                // dd($nn);
+                foreach ($nn as $x) {
+                    dd($x);
+                }
+
+
+                // $desc->delete();
+            }
+            
+            // $destinations->delete();
+            
             $data->delete();
+
+
         }else{
             $data->deleted_at = now();
             $data->save();

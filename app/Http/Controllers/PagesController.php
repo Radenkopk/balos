@@ -47,9 +47,6 @@ class PagesController extends Controller
     }
 
     public function singleApartman($slug){
-        // $apartman = Apartmans::where('slug',$slug)->where('active',1)
-        //     ->whereNull('deleted_at')
-        //     ->first();
         $apartman = Apartmans::where([
             ['slug',$slug],
             ['active',1],
@@ -78,10 +75,6 @@ class PagesController extends Controller
     }
 
     public function singleRegion($slug){
-        // $region = Regions::where('slug',$slug)
-        //     ->whereNull('deleted_at')
-        //     ->where('active',1)
-        //     ->first();
         $region = Regions::where([
             ['slug', $slug],
             ['active',1],
@@ -103,6 +96,7 @@ class PagesController extends Controller
         $cityData = RegionCity::where('region_id', $id)->get();
 
         foreach ($cityData as $key => $city ){
+            
             if($type == 'hotels'){
                 $hotelsCheck = Hotels::where('region_city_id', $city->id)->count();
                 if ($hotelsCheck == 0) {
@@ -112,16 +106,15 @@ class PagesController extends Controller
 
         }
 
-       if($type == 'hotels'){
-           //uzmi podatke iz baze za hotele
-//           dd($cityData);
-//           $proba = Hotels::where('region_city_id', )->get();
-//           dd($proba);
-
-       }
-       if($type == 'apartmans'){
-//
-       }
+        foreach($cityData as $key => $city){
+            if ($type == "apartmans") {
+                $apartmansCheck = Apartmans::where('region_city_id', $city->id)->count();
+                if ($apartmansCheck == 0) {
+                    // dd($cityData[$key]);
+                    unset($cityData[$key]);
+                }
+            }
+        }
 
         return view('single-region')
             ->with('region', $region)
@@ -162,7 +155,6 @@ class PagesController extends Controller
         }
         return view('blog-destination')
             ->with('destinationData', $destinationData)
-           // ->with('images', $images)
             ->with('slug',$slug)
             ->with('blogData', $blogData);
 

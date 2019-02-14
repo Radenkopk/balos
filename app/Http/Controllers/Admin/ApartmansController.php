@@ -193,7 +193,8 @@ class ApartmansController extends Controller
             // dd($image); 
             foreach($image as $img){
                 Storage::delete('/public/apartmans_image/'. $img);
-            }        
+            }
+            ApartmansImages::where('parent_id', $id)->delete();
             $data->delete();
         }else {
             $data->deleted_at = now();

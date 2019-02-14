@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Hotels;
 use App\Models\RegionCity;
+use App\Models\HotelImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class HotelsController extends Controller
 {
@@ -187,6 +189,11 @@ class HotelsController extends Controller
         $data = Hotels::find($id);
 
         if ($data->deleted_at != NULL ){
+            $images = HotelImage::where('parent_id', $id)->pluck('image');
+            foreach ($images as $image) {
+                Storage::delete('/public/hotels_images/'. $image);
+            }
+            HotelImage::where('parent_id', $id)->delete();
             $data->delete();
         }else{
             $data->deleted_at = now();

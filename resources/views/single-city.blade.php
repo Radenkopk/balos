@@ -15,28 +15,61 @@
             </div>
 
             <div class="col-lg-9 col-sm-12">
-                {{--<div class="apartmani">--}}
-                    <div class="row shadow  bg-light">
-                        <div class="col-4 p-0">
-                            <div class="height-img">
-                                <a href="#">
-                                    <img src="images/asprovalta/apartmani.jpg" class="img-fluid h-100 d-inline-block" alt="">
-                                </a>
-                            </div>
+                <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
+                    <div class="card shadow">
+                      <a  href="/single-hotel/">
+                        <img class="card-img-top" src="images/panda.jpg" alt="Card image">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <div class="d-flex justify-content-center">
+                          <a href="/single-hotel/" class="btn btn-card">Detaljnije</a>
                         </div>
-                        <div class="col-8 p-3">
-                            <h3>Apartmani Litsa - Asprovalta</h3>
-                            <p class="text-muted">Asprovalta apartmani 2018</p>
-                            <hr>
-                            <p>Apartmani Litsa se nalaze u lepo uređenom vrtu u Asprovalti,
-                                na samo 100 metara od peščane plaže
-                            </p>
-                            <div class="b-with float-right">
-                                <a href="#" class="btn btn-card">Detaljnije</a>
-                            </div>
-                        </div>
+                      </div>
                     </div>
-                {{--</div>--}}
+                  </div>
+
+                  <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
+                    <div class="card shadow">
+                      <a  href="/single-hotel/">
+                        <img class="card-img-top" src="images/panda.jpg" alt="Card image">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <div class="d-flex justify-content-center">
+                          <a href="/single-hotel/" class="btn btn-card">Detaljnije</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
+                    <div class="card shadow">
+                      <a  href="/single-hotel/">
+                        <img class="card-img-top" src="images/panda.jpg" alt="Card image">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <div class="d-flex justify-content-center">
+                          <a href="/single-hotel/" class="btn btn-card">Detaljnije</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
+                    <div class="card shadow">
+                      <a  href="/single-hotel/">
+                        <img class="card-img-top" src="images/panda.jpg" alt="Card image">
+                      </a>
+                      <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <div class="d-flex justify-content-center">
+                          <a href="/single-hotel/" class="btn btn-card">Detaljnije</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
