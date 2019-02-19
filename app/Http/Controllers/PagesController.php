@@ -22,6 +22,7 @@ class PagesController extends Controller
             ['active',1],
             ['deleted_at', null],
         ])->get();
+
         $apartmanDataHome = Apartmans::where([
             ['home', 1],
             ['active', 1],
@@ -96,7 +97,7 @@ class PagesController extends Controller
         $cityData = RegionCity::where('region_id', $id)->get();
 
         foreach ($cityData as $key => $city ){
-            
+
             if($type == 'hotels'){
                 $hotelsCheck = Hotels::where('region_city_id', $city->id)->count();
                 if ($hotelsCheck == 0) {
@@ -110,7 +111,6 @@ class PagesController extends Controller
             if ($type == "apartmans") {
                 $apartmansCheck = Apartmans::where('region_city_id', $city->id)->count();
                 if ($apartmansCheck == 0) {
-                    // dd($cityData[$key]);
                     unset($cityData[$key]);
                 }
             }
@@ -119,14 +119,27 @@ class PagesController extends Controller
         return view('single-region')
             ->with('region', $region)
             ->with('cityData',$cityData );
-//            ->with('hotel',$hotel);
-//            ->with('apartman',$apartman);
     }
 
     public function singleCity($slug){
         $city = RegionCity::where('active',1)->where('slug',$slug)->first();
+
+        $apartmansData = Apartmans::where([
+            ['active',1],
+            ['region_city_id', $city->id],
+            ['deleted_at', null],
+        ])->get();
+
+        $hotelsData = Hotels::where([
+            ['active',1],
+            ['region_city_id', $city->id],
+            ['deleted_at', null],
+        ])->get();
+
         return view('single-city')
-            ->with('city', $city);
+            ->with('city', $city)
+            ->with('apartmansData',$apartmansData)
+            ->with('hotelsData',$hotelsData);
     }
 
     public function contact(){
@@ -167,5 +180,3 @@ class PagesController extends Controller
     }
 
 }
-
-

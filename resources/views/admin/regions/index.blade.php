@@ -29,7 +29,6 @@
                                 <thead>
                                 <th>ID</th>
                                 <th>NASLOV</th>
-                                <th>SLIKA</th>
                                 <th>TEKST</th>
                                 <th>STATUS</th>
                                 <th> <span class="pull-right">IZMENI/OBRIŠI</span></th>
@@ -39,9 +38,8 @@
                                     <tr>
                                         <td>{{$data->id}}</td>
                                         <td>{{$data->title}}</td>
-                                        <td></td>
 
-                                        <td>{!! $data->description !!}</td>
+                                        <td>{!!substr($data->description , 0 , 50)!!}</td>
                                         <td>
                                             @if($data->active == 1)  Aktivno <i class="fas fa-thumbs-up"></i>
                                             @else <strong class="text-danger">Nije aktivno</strong>

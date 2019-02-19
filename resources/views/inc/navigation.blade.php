@@ -1,9 +1,11 @@
 <nav class="navbar navbar-expand-lg   nav-color sticky-top">
-  <div class="container">
+  <div class="container text-center">
+    {{-- <div class="d-flex justify-content-center"> --}}
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span><i class="fas fa-bars"></i></span>
   </button>
-  <div class="collapse navbar-collapse " id="navbarNavDropdown">
+
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ">
       <li class="nav-item px-4">
         <a class="nav-link" href="/">NASLOVNA</a>
@@ -45,5 +47,7 @@
 
     </ul>
     </div>
+
+  {{-- </div> --}}
   </div>
 </nav>

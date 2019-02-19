@@ -73,6 +73,15 @@
         <div class="checkbox">
             <label><input name="home" type="checkbox" value="1">Naslovna strana</label>
         </div>
+        <div class="checkbox dis" >
+            <label><input name="discount" class=""  type="checkbox"  value="1">popust</label>
+        </div>
+
+        <div class="form-group">
+            
+            <input name="discount1"  type="text" class="form-control dis-input" style="display: none"   placeholder="Unesite procenat">
+        </div>
+
         <div class="checkbox">
             <label><input name="active" type="checkbox" value="1">Aktivno</label>
         </div>

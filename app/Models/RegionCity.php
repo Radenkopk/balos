@@ -17,6 +17,21 @@ class RegionCity extends Model
     }
     public static function addCity($request){
         $data = new RegionCity($request->all());
+
+        if ($request->hasFile('image')) {
+            $fileNameWithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($fileNameWithext, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('image')->storeAs('public/cover_city_image', $fileNameToStore);
+            
+            $data->image = $fileNameToStore;
+    }  else {
+        
+        $data->image = 'no-image.png';
+    } 
+
+
         $data->save();
         return $data;
     }

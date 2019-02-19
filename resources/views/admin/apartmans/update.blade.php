@@ -73,6 +73,15 @@
         <div class="checkbox">
             <label><input name="home" type="checkbox" @if($data->home == 1) checked @endif value="1">Naslovna strana</label>
         </div>
+        <div class="checkbox dis" >
+            <label><input name="discount"type="checkbox" @if($data->discount == 1) checked @endif   value="1">popust</label>
+        </div>
+
+        <div class="form-group">
+
+            <input name="discount1"  type="text" class="form-control dis-input" value="{{$data->discount1}}"@if($data->discount == 1) style="display: block" @else style="display: none"  @endif        placeholder="Unesite procenat">
+        </div>
+
         <div class="checkbox">
             <label><input name="active" type="checkbox" @if($data->active == 1) checked @endif value="1">Aktivno</label>
         </div>

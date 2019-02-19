@@ -4,7 +4,13 @@
     <span class="text-secondary ml-3"> | {{$blogData->title}}</span>
     <div class="line"></div>
     <div class="parga-content bg-light mt-5 text-justify text-muted">
+    <h1>{{$blogData->title}}</h1>
             <img class="img-fluid my-5" src="/storage/cover_blog_image/{{$blogData->image}}">
+            {!!$blogData->description!!}
+            <br>
+            <div class="line"></div>
+            <br>
+
         @foreach ($destinationData as $destination)
             <h1>{{$destination->title}}</h1>
             <div>{!!$destination->description!!}</div>

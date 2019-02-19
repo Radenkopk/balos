@@ -16,11 +16,21 @@
             </div>
         @endforeach
     @endif
-    <form class="input-admin" action="/admin/regions-city" method="post">
+    <form class="input-admin" action="/admin/regions-city" method="post" enctype = "multipart/form-data">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="title">Unesite naslov</label>
             <input name="title" type="text" class="form-control " id="title" placeholder="Unesite naslov">
+        </div>
+
+
+        <div class="form-group">
+            {{Form::file('image')}}
+        </div>
+
+        <div class="form-group">
+            <label for="article-ckeditor">Tekst</label>
+            <textarea name="description" class="form-control" id="article-ckeditor" rows="3"></textarea>
         </div>
 
         <div class="form-group">

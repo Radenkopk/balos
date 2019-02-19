@@ -7,7 +7,7 @@
 <div class="row mt-4">
   <div class="col-lg-3 col-sm-12">
     <ul  class="lista p-0">
-      <li class="proba list-group-item-dark"><strong>Foto galerija i opis</strong></li>
+      <li class="list-group-item-dark proba"><span class="triangle-right"></span><strong>Foto galerija i opis</strong></li>
       <li class="list-group-item-dark"><strong><i class="fas fa-thumbtack"></i> Lokacija</strong></li>
       <li class="list-group-item-dark"><strong>Video</strong></li>
       <li class="list-group-item-dark"><strong>Program putovanja</strong></li>

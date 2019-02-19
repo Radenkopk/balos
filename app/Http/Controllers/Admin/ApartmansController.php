@@ -151,6 +151,11 @@ class ApartmansController extends Controller
         if (!$request->has('active')){
             $data->active = 0;
         }
+
+        if (!$request->has('discount')){
+            $data->discount = 0;
+        }
+
         $data->update($request->all());
 
         if ($request->slug){
@@ -190,7 +195,7 @@ class ApartmansController extends Controller
 
         if($data->deleted_at != NULL){
             $image = ApartmansImages::where('parent_id', $id)->pluck('image');
-            // dd($image); 
+            // dd($image);
             foreach($image as $img){
                 Storage::delete('/public/apartmans_image/'. $img);
             }

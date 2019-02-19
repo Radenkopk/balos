@@ -8,8 +8,15 @@
     <div class="item">
       <div class="card shadow">
         <a  href="/single-apartman/{{$data->slug}}">
-        <img class="card-img-top" src="storage/cover_apartman_image/{{$data->image}}" alt="Card image" >
-      </a>
+          <div class="discount text-center"
+            @if($data->discount == 1) style="display: block"
+            @else style="display: none"
+            @endif >
+            <p class="m-0">popust</p>
+            <p>{{ $data->discount1}}%</p>
+          </div>
+          <img class="card-img-top" src="storage/cover_apartman_image/{{$data->image}}" alt="Card image" >
+        </a>
       <div class="card-body">
         <h4 class="card-title">{{$data->title}}</h4>
         <p class="text-muted">{{$data->subtitle}}</p>

@@ -103,6 +103,19 @@ $(".lista li").eq(5).click(function(){
 
 })
 
+$(".apr").click(function(){
+  $(".regions").addClass('d-none');
+  $(".regions").removeClass('d-block');
+  $(".citys").removeClass('d-none');
+
+})
+
+$(".reg").click(function(){
+  $(".regions").addClass('d-block');
+  $(".citys").removeClass('d-block');
+  $(".citys").addClass('d-none');
+
+})
 // scroll
 
 window.onscroll = function() {scrollFunction()};
