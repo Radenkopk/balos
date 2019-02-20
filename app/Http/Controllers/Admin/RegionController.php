@@ -109,6 +109,10 @@ class RegionController extends Controller
             $data->deleted_at = NULL;
         }
 
+        if(!$request->has('island')){
+          $data->island = 0;
+        }
+
         $data->update($request->all());
 
 

@@ -16,8 +16,9 @@
         @endforeach
     @endif
 
-    {!! Form::model($data, ['route' => ['apartmans.update', $data->id], 'method' => 'PUT', 'class' => 'input-admin']) !!}
+    {!! Form::model($data, ['route' => ['apartmans.update', $data->id], 'method' => 'PUT', 'class' => 'input-admin', 'files' => true, 'enctype'=>'multipart/form-data']) !!}
         {{ csrf_field() }}
+        @method("PATCH")
         {{-- <h1>FOTO GALERIJA I OPIS</h1> --}}
         {{-- <div class="form-group">
           <label for="picture">Import Picture</label>
@@ -31,6 +32,14 @@
             <label for="subtitle">Subtitle</label>
             <input name="subtitle" value="{{$data->subtitle}}"  type="text" class="form-control" id="subtitle" placeholder="Unesite podnaslov">
         </div>
+        
+        <div class="form-group">
+            {{-- {{Form::file('image',array('value' => '$data->image'))}} --}}
+        <input type="file" class="form-control-file" name="image">
+        <br>  
+        <span>{{$data->image}}</span>
+        </div>
+
         <div class="form-group">
             <label for="article-ckeditor">Tekst-1</label>
             <textarea name="description1" class="form-control" id="article-ckeditor" rows="3">{!! $data->description1 !!}</textarea>
@@ -76,7 +85,6 @@
         <div class="checkbox dis" >
             <label><input name="discount"type="checkbox" @if($data->discount == 1) checked @endif   value="1">popust</label>
         </div>
-
         <div class="form-group">
 
             <input name="discount1"  type="text" class="form-control dis-input" value="{{$data->discount1}}"@if($data->discount == 1) style="display: block" @else style="display: none"  @endif        placeholder="Unesite procenat">

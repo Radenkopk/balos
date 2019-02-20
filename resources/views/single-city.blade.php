@@ -33,13 +33,13 @@
   @foreach ($hotelsData as $data)
     <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
       <div class="card shadow">
-        <a  href="/single-apartman/{{$data->slug}}">
+        <a  href="/single-hotel/{{$data->slug}}">
         <img class="card-img-top" src="/storage/cover_hotel_image/{{$data->image}}" alt="Card image">
         </a>
         <div class="card-body">
         <h5 class="card-title">{{$data->title}}</h5>
           <div class="d-flex justify-content-center">
-            <a href="/single-apartman/{{$data->slug}}" class="btn btn-card">Detaljnije</a>
+            <a href="/single-hotel/{{$data->slug}}" class="btn btn-card">Detaljnije</a>
           </div>
         </div>
       </div>

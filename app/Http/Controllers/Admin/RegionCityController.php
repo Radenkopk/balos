@@ -102,6 +102,11 @@ class RegionCityController extends Controller
             $data->active = 0;
         }
 
+        if (!$request->has('home')) {
+            $data->home = 0;
+        }
+
+
         if ($data->deleted_at != NULL){
             $data->deleted_at = NULL;
         }

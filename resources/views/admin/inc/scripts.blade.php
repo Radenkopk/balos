@@ -21,7 +21,7 @@
 <!-- custom js -->
 <script src="/js/admin/modal.js"></script>
 <script src="/js/admin/alerts.js"></script>
-<script src="/js/checkbox.js"></script>
+<script src="/js/admin/checkbox.js"></script>
  <script type="text/javascript">
 // $(document).ready(function(){
 //

@@ -39,8 +39,13 @@
         <label for="slug">Slug</label>
         <input name="slug"   type="text" value="{{$data->slug}}" class="form-control" id="slug" placeholder="Unesite slug">
     </div>
+
     <div class="checkbox">
-            <label><input name="active" type="checkbox" @if($data->active == 1) checked @endif value="1">Aktivno</label>
+      <label><input name="home" type="checkbox" @if($data->home == 1) checked @endif value="1">Naslovna</label>
+    </div>
+
+    <div class="checkbox">
+      <label><input name="active" type="checkbox" @if($data->active == 1) checked @endif value="1">Aktivno</label>
     </div>
     <input class="btn btn-success " type="submit" value="SUBMIT">
     {!! Form::close() !!}

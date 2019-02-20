@@ -13,7 +13,7 @@
             @else style="display: none"
             @endif >
             <p class="m-0">popust</p>
-            <p>{{ $data->discount1}}%</p>
+            <strong>{{ $data->discount1}}%</strong>
           </div>
           <img class="card-img-top" src="storage/cover_apartman_image/{{$data->image}}" alt="Card image" >
         </a>
@@ -32,7 +32,7 @@
   </div>
 @endforeach
 </div>
-<h1>HOTELI</h1>
+{{-- <h1>HOTELI</h1>
 <div class="row ">
   @foreach($hotelData as $data)
   <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
@@ -49,22 +49,22 @@
     </div>
   </div>
   @endforeach
-</div>
-<h1>APARTMANI</h1>
+</div> --}}
+<h1>MESTA</h1>
 <div class="row">
-@foreach($apartmanDataHome as $data)
+@foreach($RegionCityHome as $city)
   <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
-    <div class="card shadow">
-      <a  href="/single-apartman/{{$data->slug}}">
-        <img class="card-img-top" src="storage/cover_apartman_image/{{$data->image}}" alt="Card image">
-      </a>
-      <div class="card-body">
-        <h5 class="card-title">{{$data->title}}</h5>
-        <div class="d-flex justify-content-center">
-          <a href="/single-apartman/{{$data->slug}}" class="btn btn-card">Detaljnije</a>
-        </div>
+      <div class="card shadow">
+          <a  href="/single-city/{{$city->slug}}">
+          <img class="card-img-top" src="/storage/cover_city_image/{{$city->image}}" alt="Card image">
+          </a>
+          <div class="card-body">
+              <h5 class="card-title">{{$city->title}}</h5>
+              <div class="d-flex justify-content-center">
+                  <a href="/single-city/{{$city->slug}}" class="btn btn-card">Detaljnije</a>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
 @endforeach
 </div>

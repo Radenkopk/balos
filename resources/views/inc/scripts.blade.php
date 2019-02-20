@@ -11,7 +11,6 @@
 <!-- custom js -->
 <script src="/js/balos/list.js"></script>
 <script src="/js/balos/random.js"></script>
-<script src="/js/checkbox.js"></script>
 
 <!-- carousel -->
 <script src="/js/balos/owl.carousel.js"></script>

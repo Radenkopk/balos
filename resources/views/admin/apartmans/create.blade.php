@@ -41,7 +41,12 @@
         </div>
         <h1>lokacija</h1>
         <div class="form-group">
-            <label for="video">Unesite URL</label>
+            <label for="location">Unesite URL Lokacije</label>
+            <input name="location"  type="text" class="form-control" id="location" placeholder="Unesite url">
+        </div>
+
+        <div class="form-group">
+            <label for="video">Unesite Video URL </label>
             <input name="video" type="text" class="form-control" id="video" placeholder="Unesite url">
         </div>
         <div class="form-group">
@@ -78,10 +83,8 @@
         </div>
 
         <div class="form-group">
-            
             <input name="discount1"  type="text" class="form-control dis-input" style="display: none"   placeholder="Unesite procenat">
         </div>
-
         <div class="checkbox">
             <label><input name="active" type="checkbox" value="1">Aktivno</label>
         </div>

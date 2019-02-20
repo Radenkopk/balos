@@ -33,6 +33,9 @@
         <label for="slug">slug</label>
         <input name="slug" type="text" class="form-control " id="slug" placeholder="slug">
     </div>
+    <div class="checkbox">
+      <label><input name="island" type="checkbox" @if($data->island == 1) checked @endif value="1">Ostrvo</label>
+    </div>
         <div class="checkbox">
             <label><input name="active" type="checkbox" @if($data->active == 1) checked @endif value="1"> Active</label>
 

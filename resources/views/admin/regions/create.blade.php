@@ -15,7 +15,7 @@
             </div>
         @endforeach
     @endif
-    <form class="input-admin" action="/admin/regions" method="post">
+      <form class="input-admin" action="/admin/regions" method="post">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="title">Unesite naslov</label>
@@ -29,11 +29,15 @@
             <label for="article-ckeditor">Tekst</label>
             <textarea name="description" class="form-control" id="article-ckeditor" rows="3"></textarea>
         </div>
+
+        <div class="checkbox">
+            <label><input name="island" type="checkbox" value="1">Ostrvo</label>
+        </div>
+
         <div class="checkbox">
             <label><input name="active" type="checkbox" value="1"> Active</label>
 
         </div>
         <input class="btn btn-success " type="submit" value="SUBMIT">
-
-    </form>
+      </form>
 @endsection

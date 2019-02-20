@@ -19,11 +19,12 @@ class PagesController extends Controller
 {
     public function home(){
         $apartmanData = Apartmans::where([
+            ['home', 1],
             ['active',1],
             ['deleted_at', null],
         ])->get();
 
-        $apartmanDataHome = Apartmans::where([
+        $RegionCityHome = RegionCity::where([
             ['home', 1],
             ['active', 1],
             ['deleted_at', null],
@@ -44,7 +45,7 @@ class PagesController extends Controller
             ->with('hotelData', $hotelData)
             ->with('apartmanData', $apartmanData)
             ->with('blogData', $blogData)
-            ->with('apartmanDataHome', $apartmanDataHome);
+            ->with('RegionCityHome', $RegionCityHome);
     }
 
     public function singleApartman($slug){

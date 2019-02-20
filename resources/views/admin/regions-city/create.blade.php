@@ -44,8 +44,11 @@
         </div>
 
         <div class="checkbox">
-            <label><input name="active" type="checkbox" value="1">Aktivno</label>
+            <label><input name="home" type="checkbox" value="1">Naslovna</label>
+        </div>
 
+        <div class="checkbox">
+            <label><input name="active" type="checkbox" value="1">Aktivno</label>
         </div>
         <input class="btn btn-success " type="submit" value="SUBMIT">
 
