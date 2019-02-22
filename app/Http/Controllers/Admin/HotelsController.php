@@ -150,7 +150,31 @@ class HotelsController extends Controller
         if (!$request->has('active')){
             $data->active = 0;
         }
+
+        if ($request->hasFile('image')) {
+            $oldImage = $data->image;
+
+            if ($oldImage != 'no-image.png') {
+                Storage::delete('/public/cover_hotel_image/'. $oldImage);
+            }
+            
+        }
+
+
         $data->update($request->all());
+
+        if ($request->hasFile('image')) {
+            $fileNameWithext = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($fileNameWithext, PATHINFO_FILENAME);
+            $extension = $request->file('image')->getClientOriginalExtension();
+            $fileNameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('image')->storeAs('public/cover_hotel_image', $fileNameToStore);
+            
+            $data->image = $fileNameToStore;
+            $data->save();
+
+            }
+
 
 
 

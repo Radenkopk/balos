@@ -16,7 +16,7 @@
         @endforeach
     @endif
 
-    {!! Form::model($data, ['route' => ['hotels.update', $data->id], 'method' => 'PUT', 'class' => 'input-admin']) !!}
+    {!! Form::model($data, ['route' => ['hotels.update', $data->id], 'method' => 'PUT', 'class' => 'input-admin', 'files' => true, 'enctype'=>'multipart/form-data']) !!}
     {{ csrf_field() }}
     {{-- <h1>FOTO GALERIJA I OPIS</h1> --}}
     {{-- <div class="form-group">
@@ -30,6 +30,11 @@
     <div class="form-group">
         <label for="subtitle">Subtitle</label>
         <input name="subtitle" value="{{$data->subtitle}}"  type="text" class="form-control" id="subtitle" placeholder="Unesite podnaslov">
+    </div>
+    <div class="form-group">
+    <input type="file" class="form-control-file" name="image">
+    <br>  
+    <span>{{$data->image}}</span>
     </div>
     <div class="form-group">
         <label for="article-ckeditor">Tekst-1</label>

@@ -5,10 +5,10 @@
     <div class="line"></div>
     <h1>{{$region->title}}</h1>
     <div class="row my-5 text-center">
-      <div class="col-lg-6">
+      <div class="col-lg-6 col-sm-6">
       <a href="#" class="btn btn-card apr">MESTA</a>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-6 col-sm-6">
     <a href="#" class="btn btn-card reg">OPIS REGIJE</a>
     </div>
     </div>

@@ -18,12 +18,6 @@
 
     {!! Form::model($data, ['route' => ['apartmans.update', $data->id], 'method' => 'PUT', 'class' => 'input-admin', 'files' => true, 'enctype'=>'multipart/form-data']) !!}
         {{ csrf_field() }}
-        @method("PATCH")
-        {{-- <h1>FOTO GALERIJA I OPIS</h1> --}}
-        {{-- <div class="form-group">
-          <label for="picture">Import Picture</label>
-          <input name="image" type="file" class="form-control-file" id="picture" aria-describedby="fileHelp">
-        </div> --}}
         <div class="form-group">
             <label for="title">Naslov</label>
             <input name="title" value="{{$data->title}}"  type="text" class="form-control" id="title" placeholder="Unesite naslov">
@@ -34,7 +28,6 @@
         </div>
         
         <div class="form-group">
-            {{-- {{Form::file('image',array('value' => '$data->image'))}} --}}
         <input type="file" class="form-control-file" name="image">
         <br>  
         <span>{{$data->image}}</span>
@@ -87,7 +80,7 @@
         </div>
         <div class="form-group">
 
-            <input name="discount1"  type="text" class="form-control dis-input" value="{{$data->discount1}}"@if($data->discount == 1) style="display: block" @else style="display: none"  @endif        placeholder="Unesite procenat">
+            <input name="discount1"  type="text" class="form-control dis-input" value="{{$data->discount1}}"@if($data->discount == 1) style="display: block" @else style="display: none"  @endif  placeholder="Unesite procenat">
         </div>
 
         <div class="checkbox">

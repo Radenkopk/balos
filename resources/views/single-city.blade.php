@@ -5,10 +5,10 @@
 <div class="line"></div>
 <h2>{{$city->title}}</h2>
 <div class="row my-5 text-center">
-  <div class="col-lg-6">
+  <div class="col-lg-6 col-sm-6">
     <a href="#" class="btn btn-card apr">APARTMANI</a>
   </div>
-  <div class="col-lg-6">
+  <div class="col-lg-6 col-sm-6">
     <a href="#" class="btn btn-card reg">O MESTU</a>
     </div>
 </div>

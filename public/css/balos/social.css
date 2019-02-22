@@ -4,6 +4,22 @@
 .social li {
   list-style: none;
 }
+
+header .social li a {
+  width: 30px;
+  height: 30px;
+  background-color: #b4aaaa;
+  text-align: center;
+  font-size: 12px;
+  margin: 0 10px;
+  display: block;
+  padding-top: 10px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
 .social li a {
   width: 50px;
   height: 50px;

@@ -171,6 +171,9 @@ class ApartmansController extends Controller
  
 
         $data->update($request->all());
+
+        // image 
+        
         if ($request->hasFile('image')) {
             $fileNameWithext = $request->file('image')->getClientOriginalName();
             $filename = pathinfo($fileNameWithext, PATHINFO_FILENAME);
@@ -222,7 +225,6 @@ class ApartmansController extends Controller
 
         if($data->deleted_at != NULL){
             $image = ApartmansImages::where('parent_id', $id)->pluck('image');
-            // dd($image);
             foreach($image as $img){
                 Storage::delete('/public/apartmans_image/'. $img);
             }

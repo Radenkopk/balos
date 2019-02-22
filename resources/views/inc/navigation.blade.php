@@ -1,4 +1,58 @@
-<nav class="navbar navbar-expand-lg   nav-color sticky-top">
+<div class="row">
+
+<div class="p-0 col-1">
+  <div class="color1"></div>
+</div>
+
+<div class="p-0 col-1">
+ <div class="color2"></div>
+</div>
+
+<div class="p-0 col-1">
+ <div class="color3"></div>
+</div>
+
+<div class="p-0 col-1">
+ <div class="color4"></div>
+</div>
+
+<div class="p-0 col-1">
+ <div class="color5"></div>
+</div>
+
+<div class="p-0 col-1">
+ <div class="color6"></div>
+</div>
+
+<div class="p-0 col-1">
+<div class="color7"></div>
+</div>
+
+<div class="p-0 col-1">
+ <div class="color8"></div>
+</div>
+
+<div class="p-0 col-1">
+ <div class="color9"></div>
+</div>
+
+<div class="p-0 col-1">
+ <div class="color10"></div>
+</div>
+
+<div class="p-0 col-1">
+ <div class="color11"></div>
+</div>
+
+<div class="p-0 col-1">
+ <div class="color12"></div>
+</div>
+</div>
+
+
+
+
+<nav class="navbar navbar-expand-lg  nav-color sticky-top">
   <div class="container text-center">
     {{-- <div class="d-flex justify-content-center"> --}}
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,6 +61,12 @@
 
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ">
+      <li class="nav-item px-4">
+        <a class="nav-link" href="/">
+          <img src="/images/logo.png" class="img-fluid logo-nav" alt="">
+        </a>
+      </li>
+
       <li class="nav-item px-4">
         <a class="nav-link" href="/">NASLOVNA</a>
       </li>
