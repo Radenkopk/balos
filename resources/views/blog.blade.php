@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+  <div class="container">
+
+
 <a class="text-secondary" href="/">POCETNA</a>
 <span class="text-secondary ml-3"> | BLOG</span>
 <div class="line"></div>
@@ -18,4 +21,5 @@
 @endforeach
 
 <div class="line mb-5"></div>
+</div>
 @endsection

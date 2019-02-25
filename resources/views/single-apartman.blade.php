@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+  <div class="container">
+
+
 <a class="text-secondary" href="/">pocetna</a>
 <span class="text-secondary ml-3"> | {{$apartman->title}}</span>
 <div class="line"></div>
@@ -68,6 +71,6 @@
 
   </div>
 </div>
-
+  </div>
 
 @endsection

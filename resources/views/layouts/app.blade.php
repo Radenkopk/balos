@@ -15,12 +15,11 @@
     <div class="container-fluid background p-0">
       <div class="container">
         @include('inc.social')
+      </div>
         <div class="phone"  data-toggle="modal" data-target="#myModal"><i class="fa fa-phone"></i></div>
         <button  type="button" id="btn-top"><strong class="d-none	d-lg-inline-block">VRH STRANE</strong>
         <i class="fas fa-arrow-up d-lg-none d-sm-inline-block"></i></button>
         @yield('content')
-
-      </div>
       @include('inc.footer')
     </div>
     @include('inc.scripts')

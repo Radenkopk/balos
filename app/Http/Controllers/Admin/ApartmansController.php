@@ -25,8 +25,6 @@ class ApartmansController extends Controller
             $keyword = false;
         }
         $allData = Apartmans::allData($keyword);
-
-
         return view('admin.apartmans.index')
         ->with('allData', $allData);
     }
@@ -156,31 +154,31 @@ class ApartmansController extends Controller
             $data->discount = 0;
         }
 
-        
+
         if ($request->hasFile('image')) {
             $oldImage = $data->image;
 
             if ($oldImage != 'no-image.png') {
                 Storage::delete('/public/cover_apartman_image/'. $oldImage);
             }
-            
+
         }
 
-   
 
- 
+
+
 
         $data->update($request->all());
 
-        // image 
-        
+        // image
+
         if ($request->hasFile('image')) {
             $fileNameWithext = $request->file('image')->getClientOriginalName();
             $filename = pathinfo($fileNameWithext, PATHINFO_FILENAME);
             $extension = $request->file('image')->getClientOriginalExtension();
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
             $path = $request->file('image')->storeAs('public/cover_apartman_image', $fileNameToStore);
-            
+
             $data->image = $fileNameToStore;
 
             $data->save();

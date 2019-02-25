@@ -18,9 +18,8 @@ header h4 {
 .fa-search {
   color: grey;
   position: relative;
-  /* right: -30px; */
   cursor: pointer;
-  left: 190px;
-  /* top: -34px; */
   bottom: 23px;
+  float: right;
+  margin-right: 13px;
 }

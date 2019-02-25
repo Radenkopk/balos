@@ -29,21 +29,10 @@
     <div class="col-lg-3 col-sm-6 col-xs-12 ">
       <h3 class="text-muted mb-4">Grčka ostrva</h3>
       <ul>
-        <li><a href="#">Evia Edipsos apartmani – letovanje 2018</a></li>
-        <li><a href="#">Evia Pefki apartmani – letovanje 2018</a></li>
-        <li><a href="#">Krf Kasiopi apartmani – letovanje 2018</a></li>
-        <li><a href="#">Tasos Golden Beach apartmani – letovanje 2018</a></li>
-        <li><a href="#">Tasos Limenarija apartmani – letovanje 2018</a></li>
-        <li><a href="#">Tasos Limenas apartmani – letovanje 2018</a></li>
-        <li><a href="#">Tasos Potos apartmani – letovanje 2018</a></li>
-        <li><a href="#">Tasos Skala Potamia apartmani – letovanje 2018</a></li>
-        <li><a href="#">Tasos Skala Sotiros apartmani – letovanje 2018</a></li>
-        <li><a href="#">Lefkada Agios Nikitas apartmani – letovanje 2018</a></li>
-        <li><a href="#">Lefkada Lefkas apartmani – letovanje 2018</a></li>
-        <li><a href="#">Lefkada Ligia apartmani – letovanje 2018</a></li>
-        <li><a href="#">Lefkada Nidri apartmani – letovanje 2018</a></li>
-        <li><a href="#">Kefalonija Lasi apartmani – letovanje 2018</a></li>
-        <li><a href="#">Zakintos Laganas apartmani – letovanje 2018</a></li>
+@foreach ($islands as $island)
+    <li><a href="/single-region/{{$island->slug}}">{{$island->title}}</a></li>
+@endforeach
+
       </ul>
     </div>
     <div class="col-lg-3 col-sm-6 col-xs-12 ">

@@ -1,57 +1,52 @@
 <div class="row">
+  <div class="p-0 col-1">
+    <div class="color1"></div>
+  </div>
 
-<div class="p-0 col-1">
-  <div class="color1"></div>
+  <div class="p-0 col-1">
+   <div class="color2"></div>
+  </div>
+
+  <div class="p-0 col-1">
+   <div class="color3"></div>
+  </div>
+
+  <div class="p-0 col-1">
+   <div class="color4"></div>
+  </div>
+
+  <div class="p-0 col-1">
+   <div class="color5"></div>
+  </div>
+
+  <div class="p-0 col-1">
+   <div class="color6"></div>
+  </div>
+
+  <div class="p-0 col-1">
+  <div class="color7"></div>
+  </div>
+
+  <div class="p-0 col-1">
+   <div class="color8"></div>
+  </div>
+
+  <div class="p-0 col-1">
+   <div class="color9"></div>
+  </div>
+
+  <div class="p-0 col-1">
+   <div class="color10"></div>
+  </div>
+
+  <div class="p-0 col-1">
+   <div class="color11"></div>
+  </div>
+
+  <div class="p-0 col-1">
+   <div class="color12"></div>
+  </div>
 </div>
-
-<div class="p-0 col-1">
- <div class="color2"></div>
-</div>
-
-<div class="p-0 col-1">
- <div class="color3"></div>
-</div>
-
-<div class="p-0 col-1">
- <div class="color4"></div>
-</div>
-
-<div class="p-0 col-1">
- <div class="color5"></div>
-</div>
-
-<div class="p-0 col-1">
- <div class="color6"></div>
-</div>
-
-<div class="p-0 col-1">
-<div class="color7"></div>
-</div>
-
-<div class="p-0 col-1">
- <div class="color8"></div>
-</div>
-
-<div class="p-0 col-1">
- <div class="color9"></div>
-</div>
-
-<div class="p-0 col-1">
- <div class="color10"></div>
-</div>
-
-<div class="p-0 col-1">
- <div class="color11"></div>
-</div>
-
-<div class="p-0 col-1">
- <div class="color12"></div>
-</div>
-</div>
-
-
-
-
 <nav class="navbar navbar-expand-lg  nav-color sticky-top">
   <div class="container text-center">
     {{-- <div class="d-flex justify-content-center"> --}}
@@ -81,7 +76,9 @@
           <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">GRCKA APARTMANI LETOVANJE <i class="fa fa-angle-right"></i></a>
             <ul class="dropdown-menu">
               @foreach($menuData as $menu)
-              <li><a class="dropdown-item text-uppercase" href="/single-region/{{$menu->slug}}/apartmans">{{$menu->title}}</a></li>
+                @if($menu->show == 1)
+                    <li><a class="dropdown-item text-uppercase" href="/single-region/{{$menu->slug}}/apartmans">{{$menu->title}}</a></li>
+                @endif
               @endforeach
             </ul>
           </li>
@@ -91,7 +88,9 @@
 
             <ul class="dropdown-menu">
               @foreach($menuData as $menu)
+                @if($menu->showHotels == 1)
                 <li><a class="dropdown-item text-uppercase" href="/single-region/{{$menu->slug}}/hotels">{{$menu->title}}</a></li>
+              @endif
               @endforeach
             </ul>
           </li>

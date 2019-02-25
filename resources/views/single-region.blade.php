@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+  <div class="container">
+
     <a class="text-secondary" href="/">POCETNA</a>
     <span class="text-secondary ml-3"> | {{$region->title}}</span>
     <div class="line"></div>
@@ -30,4 +32,6 @@
         @endforeach
     </div>
     <div class="d-none regions">{!!$region->description!!}</div>
+
+  </div>
 @endsection

@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+  <div class="container">
+
+
     <a class="text-secondary" href="/">pocetna</a>
     <span class="text-secondary ml-3"> | {{$hotel->title}}</span>
     <div class="line"></div>
@@ -62,4 +65,5 @@
     </div>
 
     </div>
+      </div>
 @endsection

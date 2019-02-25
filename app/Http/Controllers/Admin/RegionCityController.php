@@ -17,9 +17,9 @@ class RegionCityController extends Controller
     public function index()
     {
         $allData = RegionCity::allData();
-//                foreach ($allData as $data){
-//            dd($data);
-//        }
+       //         foreach ($allData as $data){
+       //     dd($data);
+       // }
         return view('admin.regions-city.index')->with('allData', $allData);
     }
 

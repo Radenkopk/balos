@@ -3,14 +3,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 p-0">
-
-
-
-      <h4 class="py-3 my-0 text-dark"><a href="#">office@balostravel-letovanje.rs</a> Kneginje Zorke 16A, ( kod Hrama ), 11000 Beograd
+          <h4 class="py-3 my-0 text-dark"><a href="#">office@balostravel-letovanje.rs</a> Kneginje Zorke 16A, ( kod Hrama ), 11000 Beograd
          {{-- <i class="fas fa-phone text-danger"></i> 011/24 59 918
          <i class="fas fa-phone text-danger"></i> 061/65 10 532 --}}
          </div>
-         <div class="col-lg-3 p-0 d-flex justify-content-center">
+         <div class=" col-lg-3 p-0 d-none d-lg-block">
           <ul class="social py-3 my-0 px-0">
             <li><a  href="#"><i class="fab fa-facebook-square"></i></a></li>
             <li><a  href="#"><i class="fab fa-google-plus-g"></i></a></li>
@@ -21,7 +18,7 @@
        </div>
 
        <div class="col-lg-3 p-0 d-flex justify-content-center">
-         <form class="my-0">
+         <form class="my-0 w-100">
            <div class="form-group my-0">
                  <input type="text" name="search" value="" class="input-search form-control" placeholder="Pretrazi...">
                  <i class="fa fa-search mt-2"></i>

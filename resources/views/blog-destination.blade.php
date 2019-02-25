@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+  <div class="container">
+
+
     <a class="text-secondary" href="/blog">BLOG</a>
     <span class="text-secondary ml-3"> | {{$blogData->title}}</span>
     <div class="line"></div>
@@ -28,6 +31,8 @@
             </div>
         @endforeach
     </div>
-    <div class="line my-5"></div>
+<div class="line my-5"></div>
+      </div>
+
     <br>
 @endsection

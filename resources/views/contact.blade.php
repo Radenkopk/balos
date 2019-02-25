@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+  <div class="container">
+
 
     <h1>kontakt</h1>
     <div class="map-kontakt mb-5">
@@ -63,6 +65,6 @@
             <a href="mailto:office@balostravel-letovanje.rs">office@balostravel-letovanje.rs</a>
         </div>
     </div>
-
+  </div>
 
 @endsection

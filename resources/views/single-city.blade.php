@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+  <div class="container">
+
+
 <a class="text-secondary" href="/">pocetna</a>
 <span class="text-secondary ml-3"> | {{$city->title}} </span>
 <div class="line"></div>
@@ -50,5 +53,6 @@
 
 <div class="regions d-none">
   {!!$city->description!!}
+</div>
 </div>
 @endsection

@@ -1,7 +1,37 @@
 .background {
-  background-color: #ffffc6;
+  background-color: #f9f7f4;
 }
 
+.home-card-title {
+  background-color: #353b3d;
+  padding-left: 25px;
+  color: white;
+}
+
+.button-a {
+  background-color: #e21273;
+}
+
+.button-b {
+  background-color: #c66793;
+}
+.card-buttons a {
+  margin-left: 25px;
+  color: white;
+  text-decoration: none;
+  padding: 25px;
+
+}
+
+.background-citys {
+  background-image: url("pozadina.jpg");
+   background-repeat: no-repeat;
+}
+
+.no-underline:hover {
+  text-decoration: none;
+
+}
 
 .carousel-inner img {
     width: 100%;

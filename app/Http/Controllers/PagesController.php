@@ -29,6 +29,8 @@ class PagesController extends Controller
             ['active', 1],
             ['deleted_at', null],
         ])->get();
+
+
         $hotelData = Hotels::where([
             ['home',1],
             ['active',1],
@@ -41,10 +43,23 @@ class PagesController extends Controller
             ['deleted_at', null],
         ])->get();
 
+
+        foreach ($RegionCityHome as  $value) {
+          // dd($value->id);
+
+          $regionData = Regions::whereNull('deleted_at')
+          ->where('id',$value->region_id)
+          ->where('active',1)->get();
+
+        }
+
+
+
         return view('home')
             ->with('hotelData', $hotelData)
             ->with('apartmanData', $apartmanData)
             ->with('blogData', $blogData)
+            // ->with('RegionCityla', $$RegionCityla)
             ->with('RegionCityHome', $RegionCityHome);
     }
 
@@ -54,6 +69,8 @@ class PagesController extends Controller
             ['active',1],
             ['deleted_at', null],
         ])->first();
+
+
 
         $imageApartman = ApartmansImages::where('parent_id', $apartman->id)->get();
         return view('single-apartman')
@@ -131,11 +148,14 @@ class PagesController extends Controller
             ['deleted_at', null],
         ])->get();
 
+
         $hotelsData = Hotels::where([
             ['active',1],
             ['region_city_id', $city->id],
             ['deleted_at', null],
         ])->get();
+
+
 
         return view('single-city')
             ->with('city', $city)
