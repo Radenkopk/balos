@@ -19,7 +19,7 @@
           <img class="card-img-top" src="storage/cover_apartman_image/{{$data->image}}" alt="Card image" >
 
         <div class="home-card-title py-2">
-          <h4 class="card-title mb-1">{{$data->title}}</h4>
+          <h4 class="card-title mb-1 text-truncate" style="max-width: 300px;">{{$data->title}}</h4>
         </div>
       </a>
         <div class="card-buttons">
@@ -32,7 +32,7 @@
             <div class="col-6 pl-0" >
               <div class="button-b py-1">
 
-                  <a href="">55</a>
+                  <a href="/single-region/{{$data->City->Region->slug}}">{{$data->City->Region->title}}</a>
 
 
               </div>

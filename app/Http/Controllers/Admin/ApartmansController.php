@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Apartmans;
 use App\Models\ApartmansImages;
 use App\Models\RegionCity;
+use function GuzzleHttp\Promise\all;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -25,6 +26,10 @@ class ApartmansController extends Controller
             $keyword = false;
         }
         $allData = Apartmans::allData($keyword);
+
+//        foreach ($allData as $data){
+//            dd($data);
+//        }
         return view('admin.apartmans.index')
         ->with('allData', $allData);
     }

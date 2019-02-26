@@ -23,6 +23,7 @@ class PagesController extends Controller
             ['active',1],
             ['deleted_at', null],
         ])->get();
+//        dd($apartmanData);
 
         $RegionCityHome = RegionCity::where([
             ['home', 1],
@@ -121,6 +122,7 @@ class PagesController extends Controller
                 if ($hotelsCheck == 0) {
                     unset($cityData[$key]);
                 }
+
             }
 
         }
@@ -201,3 +203,6 @@ class PagesController extends Controller
     }
 
 }
+
+
+

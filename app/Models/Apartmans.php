@@ -9,7 +9,7 @@ class Apartmans extends Model
     protected $guarded = [];
 
     public function City(){
-        return $this->hasOne('App\Models\RegionCity', 'id','region_city_id');
+        return $this->hasOne('App\Models\RegionCity', 'id','region_city_id')->with('Region');
     }
 
 
