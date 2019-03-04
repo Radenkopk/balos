@@ -49,6 +49,12 @@
                   <p>Last Minute</p>
               </a>
           </li>
+          <li class="{{ Request::is('admin/slider') ? "active" : ""  }}">
+              <a href="/admin/slider">
+                  <i class="far fa-images"></i>
+                  <p>Slider</p>
+              </a>
+          </li>
           <li>
               <a href="#">
                   <i class="ti-pencil-alt2"></i>

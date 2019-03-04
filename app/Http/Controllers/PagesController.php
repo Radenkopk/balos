@@ -23,7 +23,7 @@ class PagesController extends Controller
             ['active',1],
             ['deleted_at', null],
         ])->get();
-//        dd($apartmanData);
+
 
         $RegionCityHome = RegionCity::where([
             ['home', 1],
@@ -111,10 +111,10 @@ class PagesController extends Controller
 
 
     public function singleRegionType($slug,$type){
-        $region = Regions::where('slug',$slug)->where('active',1)->first();
+        $region = Regions::where('slug',$slug)->whereNull('deleted_at')->where('active',1)->first();
         $id = $region->id;
-        $cityData = RegionCity::where('region_id', $id)->get();
 
+            $cityData = RegionCity::where('region_id', $id)->get();
         foreach ($cityData as $key => $city ){
 
             if($type == 'hotels'){
@@ -138,24 +138,29 @@ class PagesController extends Controller
 
         return view('single-region')
             ->with('region', $region)
-            ->with('cityData',$cityData );
+            ->with('cityData',$cityData )
+            ->with('type',$type);
     }
 
-    public function singleCity($slug){
-        $city = RegionCity::where('active',1)->where('slug',$slug)->first();
+    public function singleCity($slug, $type = false){
+        $city = RegionCity::where('active',1)->whereNull('deleted_at')->where('slug',$slug)->first();
+        $apartmansData = [];
+        $hotelsData = [];
+        if($type == 'apartmans' || !$type) {
+            $apartmansData = Apartmans::where([
+                ['active', 1],
+                ['region_city_id', $city->id],
+                ['deleted_at', null],
+            ])->get();
+        }
 
-        $apartmansData = Apartmans::where([
-            ['active',1],
-            ['region_city_id', $city->id],
-            ['deleted_at', null],
-        ])->get();
-
-
-        $hotelsData = Hotels::where([
-            ['active',1],
-            ['region_city_id', $city->id],
-            ['deleted_at', null],
-        ])->get();
+        if($type == 'hotels' || !$type) {
+            $hotelsData = Hotels::where([
+                ['active', 1],
+                ['region_city_id', $city->id],
+                ['deleted_at', null],
+            ])->get();
+        }
 
 
 

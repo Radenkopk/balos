@@ -42,6 +42,12 @@
             <textarea name="description2" class="form-control" id="article-ckeditor-1" rows="3">{!! $data->description2 !!}</textarea>
         </div>
         <h1>lokacija</h1>
+
+    <div class="form-group">
+        <label for="location">Unesite URL Lokacije</label>
+        <input name="location" value="{{$data->location}}"  type="text" class="form-control" id="location" placeholder="Unesite url">
+    </div>
+
         <div class="form-group">
             <label for="video">Unesite URL</label>
             <input name="video" type="text" value="{{$data->video}}" class="form-control" id="video" placeholder="Unesite url">

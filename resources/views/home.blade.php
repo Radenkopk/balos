@@ -25,14 +25,15 @@
         <div class="card-buttons">
           <div class="row">
             <div class="col-6 pr-0">
-              <div class="button-a py-1">
-                <a href="/single-city/{{$data->City->slug}} " class="m-0 pl-3 py-0 "><strong>{{$data->City->title}}</strong></a>
+              <div class="button-a py-1" @if($data->City->deleted_at != null) style="display: none" @endif>
+                <a href="/single-city/{{$data->City->slug}}/apartmans " class="m-0 pl-3 py-0 "><strong>{{$data->City->title}}</strong></a>
+
               </div>
             </div>
             <div class="col-6 pl-0" >
-              <div class="button-b py-1">
+              <div class="button-b py-1 @if($data->City->Region->deleted_at != null) d-none @endif ">
 
-                  <a href="/single-region/{{$data->City->Region->slug}}">{{$data->City->Region->title}}</a>
+                  <a href="/single-region/{{$data->City->Region->slug}}/apartmans">{{$data->City->Region->title}}</a>
 
 
               </div>
@@ -86,19 +87,22 @@
 <h1>MESTA</h1>
 <div class="row">
 @foreach($RegionCityHome as $city)
-  <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
+
+
+        <div class="mb-4 col-lg-3 col-md-6 col-sm-6">
       <div class="card shadow">
-          <a  href="/single-city/{{$city->slug}}">
+          <a  href="/single-city/{{$city->slug}}/apartmans">
           <img class="card-img-top" src="/storage/cover_city_image/{{$city->image}}" alt="Card image">
           </a>
           <div class="card-body">
               <h5 class="card-title">{{$city->title}}</h5>
               <div class="d-flex justify-content-center">
-                  <a href="/single-city/{{$city->slug}}" class="btn btn-card">Detaljnije</a>
+                  <a href="/single-city/{{$city->slug}}/apartmans" class="btn btn-card">Detaljnije</a>
               </div>
           </div>
       </div>
   </div>
+
 @endforeach
 </div>
 </div>

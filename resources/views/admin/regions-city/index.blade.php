@@ -38,7 +38,13 @@
                                     <tr>
                                         <td>{{$data->id}}</td>
                                         <td>{{$data->title}}</td>
-                                        <td>@if($data->Region) {{$data->Region->title}} @endif</td>
+                                        <td>
+                                            @if($data->Region)
+                                            @if($data->Region->deleted_at == null) {{$data->Region->title}}
+                                            @else  <strong  class="text-danger">Regija je obrisana !!!!</strong>
+                                            @endif
+                                            @endif
+                                        </td>
                                         <td>
                                             @if($data->active == 1)  Aktivno <i class="fas fa-thumbs-up"></i>
                                             @else <strong class="text-danger">Nije aktivno</strong>

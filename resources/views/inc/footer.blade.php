@@ -4,26 +4,9 @@
     <div class="col-lg-3 col-sm-6 col-xs-12 ">
       <h3 class="text-muted mb-4">Kontinentalna Grčka</h3>
       <ul>
-        <li><a href="/asprovalta-apartmani">Asprovalta apartmani – letovanje 2018</a></li>
-        <li><a href="#">Nea Vrasna apartmani – letovanje 2018</a></li>
-        <li><a href="#">Ofrinio Beach apartmani – letovanje 2018</a></li>
-        <li><a href="#">Stavros apartmani – letovanje 2018</a></li>
-        <li><a href="#">Leptokarija apartmani – letovanje 2018</a></li>
-        <li><a href="#">Nei Pori apartmani – letovanje 2018</a></li>
-        <li><a href="#">Olympic Beach apartmani – letovanje 2018</a></li>
-        <li><a href="#">Paralija apartmani – letovanje 2018</a></li>
-        <li><a href="#">Milina apartmani – letovanje 2018</a></li>
-        <li><a href="#">Afitos apartmani – letovanje 2018</a></li>
-        <li><a href="#">Hanioti apartmani – letovanje 2018</a></li>
-        <li><a href="#">Kalitea apartmani – letovanje 2018</a></li>
-        <li><a href="#">Pefkohori apartmani – letovanje 2018</a></li>
-        <li><a href="#">Polihrono apartmani – letovanje 2018</a></li>
-        <li><a href="#">Sarti apartmani – letovanje 2018</a></li>
-        <li><a href="#">Metamorfozis apartmani – letovanje 2018</a></li>
-        <li><a href="#">Neos Marmaras apartmani – letovanje 2018</a></li>
-        <li><a href="#">Toroni apartmani – letovanje 2018</a></li>
-        <li><a href="#">Nikiti apartmani – letovanje 2018</a></li>
-        <li><a href="#">Kalamici apartmani – letovanje 2018</a></li>
+        @foreach($continental as $cont)
+        <li><a href="/single-region/{{$cont->slug}}">{{$cont->title}}</a></li>
+        @endforeach
       </ul>
     </div>
     <div class="col-lg-3 col-sm-6 col-xs-12 ">
@@ -52,8 +35,8 @@
         <h5>Kneginje Zorke 16A, Beograd</h5>
         <h5><i class="fas fa-envelope"></i><a href="#"> office@balostravel-letovanje.rs</a></h5>
         <h5><i class="fas fa-envelope"></i><a href="#"> balostravel.beograd@gmail.com</a></h5>
-        <img class="img-fluid my-5" src="images/triglav-osiguranje.jpg" alt="">
-        <img class="img-fluid" src="images/banka.png" alt="">
+        <img class="img-fluid my-5" src="/images/triglav-osiguranje.jpg" alt="">
+        <img class="img-fluid" src="/images/banka.png" alt="">
     </div>
 </div>
 

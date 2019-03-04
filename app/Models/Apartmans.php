@@ -8,9 +8,6 @@ class Apartmans extends Model
 {
     protected $guarded = [];
 
-    public function City(){
-        return $this->hasOne('App\Models\RegionCity', 'id','region_city_id')->with('Region');
-    }
 
 
     public static function addApartman($request){
@@ -35,6 +32,13 @@ class Apartmans extends Model
         $data->save();
         return $data;
     }
+
+
+    public function City(){
+
+        return $this->hasOne('App\Models\RegionCity', 'id','region_city_id')->with('Region');
+
+}
 
 
     public static function allData($keyword = false){

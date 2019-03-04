@@ -40,7 +40,8 @@
     <div class="gallery ">{!! $apartman->description2 !!}</div>
     <!-- GOOGLE MAP -->
     <div  class="map d-none">
-      <iframe  src="{{$apartman->location}}" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+      {{--<iframe  src="{{$apartman->location}}" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>--}}
+      {!! $apartman->location !!}
     </div>
     <!-- video -->
     <div class="video d-none">
